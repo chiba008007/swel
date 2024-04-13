@@ -1,0 +1,422 @@
+div#container{
+	width:90%;
+}
+div#footer{
+	height:0px;
+}
+div#title{
+	height:60px;
+	line-height:60px;
+	border-bottom:3px solid #80ffff;
+	padding-left:40px;
+	font-size:22px;
+}
+div#form{
+	width:550px;
+	margin:0 auto;
+	margin-top:100px;
+}
+div#form h3{
+	font-size:28px;
+}
+div#form p{
+	display:inline-block;
+	font-size:18px;
+}
+div#form p input{
+	font-size:18px;
+	padding:3px;
+}
+div.center{
+	text-align:center;
+}
+div.pd20{
+	padding:20px;
+}
+
+div.half{
+	border:1px solid #ccc;
+	width:48%;
+	float:left;
+	margin:5px;
+	background-color:#ffffaa;
+	padding:3px;
+}
+
+div#tensaku-left{
+	float:left;
+	margin-right:30px;
+	display:block;
+	position:absolute;
+	width:12%;
+}
+div#tensaku-right{
+	float:left;
+	margin-left:300px;
+	min-height:600px;
+	width:75%;
+}
+div#tensaku-right:after{
+	clear:both;
+}
+.inline{
+	border:1px solid #ccc;
+	min-width:230px;
+	padding:2px;
+	margin:0px 5px 5px 0px;
+	height:30px;
+	line-height:30px;
+	cursor: pointer;
+	float:left;
+	background: #dddddd;
+    background: -webkit-linear-gradient(top,  #dddddd 0%,#cccccc 50%,#eeeeee 51%,#cccccc 100%);
+    background: -moz-linear-gradient(top,  #dddddd 0%, #cccccc 50%, #eeeeee 51%, #cccccc 100%);
+    background: -ms-linear-gradient(top,  #dddddd 0%,#cccccc 50%,#eeeeee 51%,#cccccc 100%);
+    background: -o-linear-gradient(top,  #dddddd 0%,#cccccc 50%,#eeeeee 51%,#cccccc 100%);
+    background: linear-gradient(to bottom,  #dddddd 0%,#cccccc 50%,#eeeeee 51%,#cccccc 100%);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 1px solid #eee;
+    border-top: 1px solid #ffffff;
+    text-shadow: 1px 1px 1px #eee;
+    -moz-box-shadow: 0 1px 3px black;
+    -webkit-box-shadow: 0 1px 3px black;
+    box-shadow: 0 1px 3px black;
+}
+.inline:hover{
+	background: #cccccc;
+}
+
+ul#tensaku-menu{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	margin-top:40px;
+	margin-left:30px;
+}
+ul#tensaku-menu li{
+	height:100px;
+	width:150px;
+	border-bottom:dotted 1px #000;
+	text-align:center;
+	display:block;
+}
+ul#tensaku-menu li a{
+	height:100px;
+	line-height:100px;
+	width:150px;
+	display:block;
+	font-size:22px;
+	text-decoration:none;
+	color:#696969;
+	font-weight:normal;
+}
+ul#tensaku-menu li a:hover{
+	color:#4682b4;
+}
+div.clearfix{
+	clear:both !important;
+}
+div#notes{
+	margin-top:30px;
+	clear:both;
+}
+div.buttonArea{
+	clear:both;
+	border-top:1px solid #ccc;
+	margin-top:80px;
+
+}
+
+.disable{
+	color:#cfcfcf !important;
+	background-color:#f5f5f5;
+	cursor:default;
+}
+
+#tensaku_id{
+	width:100%;
+	padding:5px;
+	font-size:18px;
+}
+textarea.textarea{
+
+	width:98%;
+	height:400px;
+	padding:0px 10px;
+	border:1px solid #ccc;
+	font-size:20.5px;
+	overflow: hidden;
+	line-height: 150%;
+	margin-bottom:30px;
+/* テキストエリアに陰をつける */
+    box-shadow: 0.2em 0.2em 0.5em black;
+
+    /* 罫線描画（各ブラウザ対応）*/
+    background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -o-linear-gradient(left, white 10px, transparent 10px), -o-linear-gradient(right, white 10px, transparent 10px), -o-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: linear-gradient(left, white 10px, transparent 10px), linear-gradient(right, white 10px, transparent 10px), linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-size: 100% 100%, 100% 100%, 100% 31px;
+    /* 淡いグレーで枠線を囲む */
+    border: 1px solid #ccc;
+
+}
+.mg{
+	font-size:18px;
+}
+div.box{
+	clear:both;
+	border:1px solid #ccc;
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+	min-height:200px;
+}
+
+div.ans_box{
+	clear:both;
+	border:3px dotted #ccc;
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+	min-height:200px;
+
+}
+
+dl.point{
+	font-size:18px;
+	clear:both;
+}
+dl.point dt{
+	width:100%;
+	margin-bottom:5px;
+}
+dl.point dd{
+	margin-bottom:5px;
+}
+dl.point dd select{
+	font-size:18px;
+	width:100px;
+}
+.red{
+	color:red;
+}
+input.disabled{
+	color:#ccc;
+}
+h3{
+	margin-top:10px;
+}
+input.read{
+	font-size:22px;
+	border:none;
+	width:10px;
+}
+
+
+
+div#printbox{
+	position:absolute;
+	margin-left:400px;
+	width:180px;
+	margin-top:-80px;
+	z-index:10;
+	display:none;
+}
+div#printbox ul{
+	margin:0;
+	padding:0;
+	width:150px;
+	height:40px;
+	list-style-type:none;
+}
+div#printbox ul li{
+	height:40px;
+	border:1px dotted #000;
+	text-align:center;
+	background-color:#fff;;
+	
+}
+div#printbox ul li a{
+	display:block;
+	line-height:40px;
+	text-decoration:none;
+	color:#000;
+}
+div#printbox ul li a:hover{
+	background-color:#f0f8ff;
+}
+
+
+
+.f18{
+	font-size:18px;
+}
+div.title{
+	height:50px;
+	border:1px solid #4169e1;
+	line-height:50px;
+	text-align:center;
+	color:#4169e1;
+	border-radius: 10px;		/* CSS3草案 */
+	-webkit-border-radius: 10px;	/* Safari,Google Chrome用 */
+	-moz-border-radius: 10px;	/* Firefox用 */
+	margin-top:5px;
+}
+p.names{
+	margin-top:5px;
+	margin-bottom:10px;
+}
+table.printTbl{
+	margin-top:10px;
+	width:100%;
+	border-collapse: collapse;
+	margin-bottom:5px;
+}
+table.printTbl td{
+	border:1px solid #000;
+	padding:5px 10px;
+}
+.printbutton{
+	clear:both;
+	position:fixed;
+    bottom:40px;
+    height:40px;
+	width:500px;
+	font-size:12px;
+	text-align:center;
+	margin-right:30px;
+	padding:10px;
+	left:60%;
+}
+.printbutton input{
+	height:40px;
+	width:200px;
+}
+.memos{
+	border:1px solid #000;
+	height:90px;
+	width:99.8%;
+	margin-top:2px;
+	page-break-after:always;
+	display:none;
+}
+hr{
+    border: 0px;
+    height: 1px;
+    background: #333;
+}
+
+ul#tensaku-tab{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	float:right;
+}
+ul#tensaku-tab li{
+	display:inline-block;
+	border:1px solid #f5f5dc;
+
+	width:120px;
+	height:80px;
+	text-align:center;
+	vertical-align:middle;
+	line-height:80px;
+}
+ul#tensaku-tab li a{
+	width:100%;
+	height:80px;
+	display:block;
+	font-size:20px;
+	text-decoration:none;
+	color:#000;
+}
+ul#tensaku-tab li a:hover{
+	background-color:#f5f5dc;
+	font-weight:bold;
+}
+
+.disabled{
+	color:#ccc;
+}
+.boxes{
+	
+	color:#fff;
+	padding:0;
+	text-shadow:0 1px 2px #111111;
+	padding: 10px 10px;
+	border-radius:3px;
+	border:1px solid #222;
+	background:#505050;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset,
+	     0 0 5px rgba(0, 0, 0, 0.3) inset,
+	     0 1px 2px rgba(0, 0, 0, 0.3);
+	margin-top: 50px;
+	width: 98%;
+	min-height:200px
+
+	
+}
+
+p.ques-menu{
+	min-height:80px;
+	padding:0;
+	margin:0;
+	width:260px;
+}
+p.ques-menu label{
+	width:280px;
+	height:100px;
+	display:table-cell;
+	vertical-align:middle;
+	border-bottom:1px solid #000000;
+}
+p.ques-menu:hover{
+	background-color:#fffafa;
+}
+#tensaku-title{
+	font-size:18px;
+	padding-bottom:10px;
+	border-bottom:1px solid #000000;
+	margin:10px 0px;
+	
+}
+
+
+
+@media print{
+	body {
+		font-size: 8px;
+	}
+	#footer{
+		display:none;
+	}
+	div.title{
+		height:20px;
+		border:1px solid #4169e1;
+		line-height:20px;
+		text-align:center;
+	}
+	.f18{
+		font-size:11px;
+	}
+	.printbutton{
+		display:none;
+	}
+	.memos{
+		display:block;
+		border:1px solid #000;
+		height:160px;
+		width:100%;
+		page-break-after:always;
+	}
+	hr{
+	    border: 1px;
+	    height: 1px;
+	    background: #333;
+	}
+}
+

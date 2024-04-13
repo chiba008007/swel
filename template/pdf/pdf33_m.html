@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            h3{
+                color:blue;
+                font-size:1.8em;
+            }
+            div.bk{
+                background-color:#fff0f2;
+                padding:10px;
+            }
+            table{
+                background-color: #fff;
+            }
+            
+            p.f20,
+            table td.f20{
+                font-size:1.6em;
+            }
+            
+            div.btm{
+                position:absolute;
+                bottom:0;
+                left:auto;
+                right:0;
+                font-size:0.8em;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>
+            测试日期：##YEAR##年##MONTH##月##DAY##日　姓名：##NAME##　（父母亲用）
+        </h2>
+        <h3>◆◆从测试结果分析您的特点◆◆</h3>
+        <div class="bk">
+            <table>
+                <tr>
+                    <td valign="TOP" width="300">
+                        <h3>育儿类型：##TITLE1##</h3><br />
+                        <img src ="/images/pdf/pdf33/##IMG1##.jpg" height="200" />
+                    </td>
+                    <td width="20">&nbsp;</td>
+                    <td valign="TOP" class="f20">
+                        <br />
+                        ##MESSAGE1##
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr>
+                    <td valign="TOP" width="300" >
+                        <h3>您的优点：##TITLE2##</h3><br />
+                        <img src ="/images/pdf/pdf33/##IMG2##.jpg" height="200" />
+                    </td>
+                    <td width="20">&nbsp;</td>
+                    <td valign="TOP"  class="f20">
+                        <br />
+                        ##MESSAGE2##
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr>
+                    <td valign="TOP" >
+                        <h3>擅长的交流方式：##TITLE3##</h3>
+                        <br />
+                        <p class="f20">##MESSAGE3##</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div align="right" class="btm">Powered by Innovation Gate ,Inc.</div>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            h3{
+                color:red;
+                font-size:2.0em;
+            }
+            div.bk{
+                background-color:#fff0f2;
+                padding:10px;
+            }
+            table td.f20{
+                font-size:1.8em;
+            }
+            div.btm{
+                position:absolute;
+                bottom:0;
+                left:auto;
+                right:0;
+                font-size:0.8em;
+            }
+			.wt{
+				background-color:#fff !important;
+				padding:8px;
+			}
+        </style>
+    </head>
+    <body>
+        <h2>
+            测试日期：##YEAR##年##MONTH##月##DAY##日　姓名：##NAME##　年龄：##AGE##岁
+        </h2>
+        <h3>◆◆从测试结果分析您的特点◆◆</h3>
+        <div class="bk" style="padding:10px;">
+            <table cellspacing=0 border=0>
+                <tr>
+                    <td valign="TOP" class="wt">
+                        <h3>你的最大优点</h3><br />
+                        <img src ="/images/pdf/pdf32/##IMG1##.jpg" />
+                    </td>
+                    <td width="20" class="wt">&nbsp;</td>
+                    <td valign="TOP" class="f20 wt" >
+                        <br />
+                        ##MESSAGE1##
+                    </td>
+                </tr>
+				<tr><td colspan=3 height="40">&nbsp;</td></tr>
+                <tr>
+                    <td valign="TOP" class="wt" >
+                        <h3>这些也是你的优点</h3><br />
+                        <img src ="/images/pdf/pdf32/##IMG2##.jpg" />
+                    </td>
+                    <td width="20" class="wt">&nbsp;</td>
+                    <td valign="TOP"  class="f20 wt">
+                        <br />
+                        ##MESSAGE2##
+                    </td>
+                </tr>
+				<tr><td colspan=3 height="40">&nbsp;</td></tr>
+                <tr>
+                    <td valign="TOP" class="wt" >
+                        <h3>可以进一步提升的方面！！</h3><br />
+                        <img src ="/images/pdf/pdf32/##IMG3##.jpg" />
+                    </td>
+                    <td width="20" class="wt" >&nbsp;</td>
+                    <td valign="TOP"  class="f20 wt">
+                        <br />
+                        ##MESSAGE3##
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div align="right" class="btm">Powered by Innovation Gate ,Inc.</div>
+    </body>
+</html>

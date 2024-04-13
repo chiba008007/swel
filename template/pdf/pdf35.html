@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            .title{font-size:18px;}
+            .aqua{background-color:#c2f3f3;}
+            .red{background-color:red !important;}
+            .yellow{background-color:yellow;}
+            .gray{background-color:gray;}
+            .pd5{padding:5px;}
+            .pd10{padding:10px;}
+            .mt5{margin-top:5px;}
+            .mt10{margin-top:10px;}
+            .ct{text-align:center;}
+            .tr{text-align:right;}
+            .vt{vertical-align: top;}
+            .vb{vertical-align: bottom;}
+            .b{border-width: 3px;border:1px solid black;}
+            .f8{font-size:9.5px;}
+            .f10{font-size:10px;}
+            .f11{font-size:11px;}
+            .f12{font-size:12px;}
+            .w20{width:20px;}
+            .w30{width:30px;}
+            .w40{width:40px;}
+            .w60{width:60px;}
+            .w100{width:100px;}
+            .w110{width:110px;}
+            .w150{width:150px;}
+            .w200{width:200px;}
+            .w250{width:250px;}
+            .w300{width:300px;}
+            .w400{width:400px;}
+            .w10p{width:10%;}
+            .w50p{width:45%;}
+            .w100p{width:100%;}
+            .w80p{width:80%;}
+            .ml10{margin-left:10px;}
+            .ml20{margin-left:20px;}
+            .ml30{margin-left:30px;}
+            .ml40{margin-left:40px;}
+            .ht10{height:10px;}
+            .ht20{height:20px;}
+            .ht30{height:30px;}
+            .ht40{height:40px;}
+            .ht50{height:50px;}
+            .ht60{height:60px;}
+            .ht80{height:80px;}
+            .ht100{height:100px;}
+            .ht110{height:110px;}
+            .ht120{height:120px;}
+            .ht130{height:130px;}
+            .ht140{height:140px;}
+            .ht143{height:143px;}
+            .ht145{height:145px;}
+            .lefts{float:left;}
+            .dd{ border:1px dotted lightgray; }
+            .dr{ border-right:4px solid #696969;}
+            .bb{ border-bottom:4px solid #696969;}
+            .startable{
+                border:1px dotted gray;
+                margin-top:10px;
+            }
+
+            .pt{position:absolute;width:20px;}
+            .ln{position:absolute;width:1px;height:162px;border-left:1px solid #000;}
+            .rln{position:absolute;width:3px;height:162px;border-left:3px solid red;}
+            .pt20{top:0;left:0;}
+            .pt30{top:0;left:0;}
+            .ln20{top:461px;left:491px;}
+            .ln30{top:461px;left:531px;}
+            .ln40{top:461px;left:571px;}
+            .ln50{top:461px;left:611px;}
+            .ln60{top:461px;left:651px;}
+            .ln70{top:461px;left:691px;}
+            .ln80{top:461px;left:726px;}
+            .p20{top:450px;left:495px;}
+            .p30{top:450px;left:530px;}
+            .p40{top:450px;left:570px;}
+            .p50{top:450px;left:610px;}
+            .p60{top:450px;left:650px;}
+            .p70{top:450px;left:690px;}
+            .p80{top:450px;left:725px;}
+
+
+
+
+            .stln{position:absolute;width:1px;height:24px;border-left:1px solid #000;}
+            .strln{position:absolute;width:3px;height:24px;border-left:5px solid red;}
+            .stln20{top:925px;left:491px;}
+            .stln30{top:916px;left:531px;}
+            .stln40{top:916px;left:571px;}
+            .stln50{top:916px;left:611px;}
+            .stln60{top:916px;left:651px;}
+            .stln70{top:916px;left:691px;}
+            .stln80{top:916px;left:726px;}
+            .stp20{top:904px;left:495px;}
+            .stp30{top:904px;left:530px;}
+            .stp40{top:904px;left:570px;}
+            .stp50{top:904px;left:610px;}
+            .stp60{top:904px;left:650px;}
+            .stp70{top:904px;left:690px;}
+            .stp80{top:904px;left:725px;}
+
+            .bar{position:absolute;border:1px solid #333;height:12px;background-color: yellow;}
+            .barsougo{top:467px;left:492px;}
+            .bar1{top:492px;left:492px;}
+            .bar2{top:515px;left:492px;}
+            .bar4{top:537px;left:492px;}
+            .bar7{top:560px;left:492px;}
+            .bar8{top:583px;left:492px;}
+            .bar12{top:604px;left:492px;}
+            .star{width:10px;position:absolute;top:##sTOP##;left:##sLEFT##;}
+            
+            .stbar{position:absolute;border:1px solid #333;height:10px;background-color:dodgerblue;}
+            .stbar1{top:925px;left:492px;}
+
+
+
+            .rsln{position:absolute;width:1px;height:140x;border-left:1px solid #000;}
+            .rsrln{position:absolute;width:3px;height:140x;border-left:5px solid red;}
+            .rsln30{top:125px;left:1268px;}
+            .rsln40{top:125px;left:1308px;}
+            .rsln50{top:125px;left:1348px;}
+            .rsln60{top:125px;left:1388px;}
+            .rsln70{top:125px;left:1428px;}
+            .rsln80{top:125px;left:1462px;}
+            .rsp20{top:115px;left:1230px;}
+            .rsp30{top:115px;left:1268px;}
+            .rsp40{top:115px;;left:1308px;}
+            .rsp50{top:115px;left:1348px;}
+            .rsp60{top:115px;left:1388px;}
+            .rsp70{top:115px;left:1428px;}
+            .rsp80{top:115px;left:1461px;}
+
+
+            .rsbar1{top:132px;left:1226px;}
+            .rsbar2{top:155px;left:1226px;}
+            .rsbar3{top:178px;left:1226px;}
+            .rsbar4{top:201px;left:1226px;}
+            .rsbar5{top:224px;left:1226px;}
+            .rsbar6{top:246px;left:1226px;}
+
+
+            .bcbar{position:absolute;border:1px solid #333;height:10px;background-color:dodgerblue;}
+            .bcln{position:absolute;width:1px;height:70x;border-left:1px solid #000;}
+            .bcrln{position:absolute;width:3px;height:70x;border-left:5px solid red;}
+
+            .bcln30{top:632px;left:1268px;}
+            .bcln40{top:632px;left:1308px;}
+            .bcln50{top:632px;left:1348px;}
+            .bcln60{top:632px;left:1388px;}
+            .bcln70{top:632px;left:1428px;}
+            .bcln80{top:632px;left:1462px;}
+
+            .bcp20{top:618px;left:1230px;}
+            .bcp30{top:618px;left:1268px;}
+            .bcp40{top:618px;;left:1308px;}
+            .bcp50{top:618px;left:1348px;}
+            .bcp60{top:618px;left:1388px;}
+            .bcp70{top:618px;left:1428px;}
+            .bcp80{top:618px;left:1461px;}
+
+            .bcbar1{top:640px;left:1227px;}
+            .bcbar2{top:660px;left:1227px;}
+            .bcbar3{top:685px;left:1227px;}
+
+        </style>    
+    </head>
+    <body >
+        <div class="star" >☆</div>
+        <div class="p20 pt f8">20</div>
+        <div class="p30 pt f8">30</div>
+        <div class="p40 pt f8">40</div>
+        <div class="p50 pt f8">50</div>
+        <div class="p60 pt f8">60</div>
+        <div class="p70 pt f8">70</div>
+        <div class="p80 pt f8">80</div>
+        <div class="ln30 ln"></div>
+        <div class="ln40 ln"></div>
+        <div class="ln50 rln"></div>
+        <div class="ln60 ln"></div>
+        <div class="ln70 ln"></div>
+        <div class="ln80 ln"></div>
+
+        <div class="bar barsougo" style="width:##SOGOBAR##px;"></div>
+        <div class="bar bar1" style="width:##DEV1BAR##px;"></div>
+        <div class="bar bar2" style="width:##DEV2BAR##px;"></div>
+        <div class="bar bar4" style="width:##DEV4BAR##px;"></div>
+        <div class="bar bar7" style="width:##DEV7BAR##px;"></div>
+        <div class="bar bar8" style="width:##DEV8BAR##px;"></div>
+        <div class="bar bar12" style="width:##DEV12BAR##px;"></div>
+
+        <div class="stln30 stln"></div>
+        <div class="stln40 stln"></div>
+        <div class="stln50 strln"></div>
+        <div class="stln60 stln"></div>
+        <div class="stln70 stln"></div>
+        <div class="stln80 stln"></div>
+        <div class="stp20 pt f8">20</div>
+        <div class="stp30 pt f8">30</div>
+        <div class="stp40 pt f8">40</div>
+        <div class="stp50 pt f8">50</div>
+        <div class="stp60 pt f8">60</div>
+        <div class="stp70 pt f8">70</div>
+        <div class="stp80 pt f8">80</div>
+        <div class="stbar stbar1" style="width:##STRESSBAR##px;"></div>
+
+
+
+        <div class="rsln30 rsln"></div>
+        <div class="rsln40 rsln"></div>
+        <div class="rsln50 rsrln"></div>
+        <div class="rsln60 rsln"></div>
+        <div class="rsln70 rsln"></div>
+        <div class="rsln80 rsln"></div>
+        <div class="rsp20 pt f8">20</div>
+        <div class="rsp30 pt f8">30</div>
+        <div class="rsp40 pt f8">40</div>
+        <div class="rsp50 pt f8">50</div>
+        <div class="rsp60 pt f8">60</div>
+        <div class="rsp70 pt f8">70</div>
+        <div class="rsp80 pt f8">80</div>
+
+        
+        <div class="bar rsbar1" style="width:##RS1BAR##px;"></div>
+        <div class="bar rsbar2" style="width:##RS2BAR##px;"></div>
+        <div class="bar rsbar3" style="width:##RS3BAR##px;"></div>
+        <div class="bar rsbar4" style="width:##RS4BAR##px;"></div>
+        <div class="bar rsbar5" style="width:##RS5BAR##px;"></div>
+        <div class="bar rsbar6" style="width:##RS6BAR##px;"></div>
+
+
+        <div class="bcln30 bcln"></div>
+        <div class="bcln40 bcln"></div>
+        <div class="bcln50 bcrln"></div>
+        <div class="bcln60 bcln"></div>
+        <div class="bcln70 bcln"></div>
+        <div class="bcln80 bcln"></div>
+        <div class="bcp20 pt f8">20</div>
+        <div class="bcp30 pt f8">30</div>
+        <div class="bcp40 pt f8">40</div>
+        <div class="bcp50 pt f8">50</div>
+        <div class="bcp60 pt f8">60</div>
+        <div class="bcp70 pt f8">70</div>
+        <div class="bcp80 pt f8">80</div>
+
+
+        <div class="bcbar bcbar1" style="width:##BC1BAR##px;"></div>
+        <div class="bcbar bcbar2" style="width:##BC2BAR##px;"></div>
+        <div class="bcbar bcbar3" style="width:##BC3BAR##px;"></div>
+
+
+        <table border=0 >
+            <tr>
+                <td class="w250">
+                    <img src="##LOGOPATH##" style="height:30px;"/><br />
+                    組織名：##CNAME##
+                </td>
+                <td>
+                    <table border=1 cellspacing=1 style="border-collapse: collapse">
+                        <tr>
+                            <td class="aqua pd5 ct w100" >受検日</td>
+                            <td class="pd5 ct w150">##Y##/##M##/##D##</td>
+                            <td class="aqua pd5 ct w100">受検者ID</td>
+                            <td class="pd5 ct w150">##EXAMID##</td>
+                            <td class="aqua pd5 ct w60">氏名</td>
+                            <td class="pd5 ct w200">##NAME##</td>
+                            <td class="aqua pd5 ct ">年齢</td>
+                            <td class="pd5 ct ">##AGE##</td>
+                            
+                        </tr>
+                    </table>
+                </td>
+                <td class="title pd10">適性検査結果シート（面接版）</td>
+            </tr>
+        </table>
+        <br clear=all />
+        <div class="lefts w50p" >
+            総合評価<br />
+            <table border=1 cellspacing=1 style="border-collapse: collapse" class="w100p">
+                <tr>
+                    <td class="aqua pd5 ct w100" >総合評価</td>
+                    <td class="pd5 ct w100">総合順位</td>
+                    <td class="pd5 ct w100">　位(人中)</td>
+                    <td class="pd5 ct w100">総合得点</td>
+                    <td class="pd5 ct w100">##SOUGOP##</td>
+                    <td class="aqua pd5 ct w100 b">判定</td>
+                    <td class="pd5 ct b ##COLOR##">##JUDGE##</td>
+                </tr>
+            </table>
+            <div class="lefts w400">
+                <table class="w100p f8" border=1 style="border-collapse: collapse" >
+                    <tr>
+                        <th class="w30">評価</th>
+                        <th class="w60">レベル</th>
+                        <th>コメント</th>
+                    </tr>
+                    <tr>
+                        <td class="ct ">##J5##</td>
+                        <td class="ct">5</td>
+                        <td class="f8" >教員としての資質が高く、教員として活躍できる可能性が高いでしょう。</td>
+                    </tr>
+                    <tr>
+                        <td class="ct gray">##J4##</td>
+                        <td class="ct gray">4</td>
+                        <td class="gray f8">教員としての資質を有していますが、一部の要素について、確認が必要です。</td>
+                    </tr>
+                    <tr>
+                        <td class="ct aqua">##J3##</td>
+                        <td class="ct aqua">3</td>
+                        <td class="aqua f8">教員として一部リスクがあります。低スコア要素の見極めが必要です。</td>
+                    </tr>
+                    <tr>
+                        <td class="ct yellow">##J2##</td>
+                        <td class="ct yellow">2</td>
+                        <td class="yellow f8">教員としてリスクがあります。採用された場合、採用後のケアが必要です。</td>
+                    </tr>
+                    <tr>
+                        <td class="ct red">##J1##</td>
+                        <td class="ct red">1</td>
+                        <td class="red f8">教員として採用する際、リスクが高い可能性があります。</td>
+                    </tr>
+                </table>
+                <div class="f11">
+                    【行動価値適合度】<br />
+                    ##COMMENT1##
+                </div>
+                <br />
+                <div class="f11">
+                    【感情能力のバランスから見た行動予測】<br />
+                    ##COMMENT2##
+                </div>
+            </div>
+            
+            <div class="lefts rel">
+                <div class="lefts w40 ct">
+                    <img src="./images/pdf/pdf35/ue.JPG" />
+                    <br />
+                    行<br />動<br />価<br />値
+                </div>
+                <div class="lefts tr ">
+                    
+                    <table class="startable" class="w80p mt10" border=1 style="border-collapse: collapse">
+                        <tr>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd aqua "> </td>
+                            <td class="w30 ht30 dd aqua dr"> </td>
+                            <td class="w30 ht30 dd gray vt">80</td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd aqua "> </td>
+                            <td class="w30 ht30 dd aqua dr"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd aqua "> </td>
+                            <td class="w30 ht30 dd aqua dr"> </td>
+                            <td class="w30 ht30 dd gray vt">70</td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd aqua "> </td>
+                            <td class="w30 ht30 dd aqua dr"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                            <td class="w30 ht30 dd"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd aqua "> </td>
+                            <td class="w30 ht30 dd aqua dr"> </td>
+                            <td class="w30 ht30 dd gray vt">60</td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                            <td class="w30 ht30 dd gray"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd bb yellow"> </td>
+                            <td class="w30 ht30 dd bb yellow"> </td>
+                            <td class="w30 ht30 dd bb yellow"> </td>
+                            <td class="w30 ht30 dd bb yellow"> </td>
+                            <td class="w30 ht30 dd bb aqua "> </td>
+                            <td class="w30 ht30 dd bb aqua dr"> </td>
+                            <td class="w30 ht30 dd bb gray"> </td>
+                            <td class="w30 ht30 dd bb gray"> </td>
+                            <td class="w30 ht30 dd bb gray"> </td>
+                            <td class="w30 ht30 dd bb gray"> </td>
+                            <td class="w30 ht30 dd bb gray"> </td>
+                            <td class="w30 ht30 dd bb gray"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd yellow vt">20</td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow vt">30</td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd aqua vt">40</td>
+                            <td class="w30 ht30 dd aqua dr"> </td>
+                            <td class="w30 ht30 dd aqua vt">50</td>
+                            <td class="w30 ht30 dd aqua"> </td>
+                            <td class="w30 ht30 dd aqua vt">60</td>
+                            <td class="w30 ht30 dd aqua"> </td>
+                            <td class="w30 ht30 dd aqua vt">70</td>
+                            <td class="w30 ht30 dd aqua tr vt" >80</td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd aqua "> </td>
+                            <td class="w30 ht30 dd aqua dr"> </td>
+                            <td class="w30 ht30 dd aqua vb">40</td>
+                            <td class="w30 ht30 dd aqua"> </td>
+                            <td class="w30 ht30 dd aqua"> </td>
+                            <td class="w30 ht30 dd aqua"> </td>
+                            <td class="w30 ht30 dd aqua"> </td>
+                            <td class="w30 ht30 dd aqua"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd yellow "> </td>
+                            <td class="w30 ht30 dd yellow dr"> </td>
+                            <td class="w30 ht30 dd yellow "></td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd yellow "> </td>
+                            <td class="w30 ht30 dd yellow dr"> </td>
+                            <td class="w30 ht30 dd yellow vb">30</td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd yellow "> </td>
+                            <td class="w30 ht30 dd yellow dr"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                        </tr>
+                        <tr>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd red"> </td>
+                            <td class="w30 ht30 dd yellow "> </td>
+                            <td class="w30 ht30 dd yellow dr"> </td>
+                            <td class="w30 ht30 dd yellow vb">20</td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                            <td class="w30 ht30 dd yellow"> </td>
+                        </tr>
+                    </table>
+                    <div class="rt">
+                        感情能力
+                        <img src="./images/pdf/pdf35/right.JPG" />
+                    </div>
+                </div>
+            </div>
+
+            <div >
+                
+                1．行動価値適合度「教員としてふさわしい価値観を有しているかを測定しています」<br />
+                <table border=1 style="border-collapse: collapse" class="w100p f8">
+                    <tr>
+                        <td class="aqua ct" rowspan="2">評価要素</td>
+                        <td class="aqua ct" rowspan="2">要素説明</td>
+                        <td class="ct w40 " rowspan="2">スコア</td>
+                        <td class="ct w40" rowspan="2">レベル</td>
+                        <td class="ct w60" >1</td>
+                        <td class="ct w40" >2</td>
+                        <td class="ct w40" >3</td>
+                        <td class="ct w40" >4</td>
+                        <td class="ct w60" >5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="ht20"></td>
+                    </tr>
+                    <tr class="b">
+                        <td class="aqua pd5 ct">総合</td>
+                        <td class="aqua">求める人材像との一致度</td>
+                        <td class="f11 ct ##SOGOBACK##">##SOGOSC##</td>
+                        <td class="f11 ct ##SOGOBACK##">##SOGOLV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5">自己感情モニタリング力</td>
+                        <td class="aqua">自分自身の心の状態を認識する力</td>
+                        <td class="f11 ct ##DEV1BACK##">##DEV1SC##</td>
+                        <td class="f11 ct ##DEV1BACK##">##DEV1LV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5">客観的自己評価力</td>
+                        <td class="aqua">自分自身を客観的にみて、素直に受け止める力</td>
+                        <td class="f11 ct ##DEV2BACK##">##DEV2SC##</td>
+                        <td class="f11 ct ##DEV2BACK##">##DEV2LV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5">ｺﾝﾄﾛｰﾙ&ｱﾁｰﾌﾞﾒﾝﾄ力</td>
+                        <td class="aqua">安定的な冷静さと粘り強く取組む力</td>
+                        <td class="f11 ct ##DEV4BACK##">##DEV4SC##</td>
+                        <td class="f11 ct ##DEV4BACK##">##DEV4LV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5">対人共感力</td>
+                        <td class="aqua">他者の立場に立って傾聴し、気持ちを察し、理解する力</td>
+                        <td class="f11 ct ##DEV7BACK##">##DEV7SC##</td>
+                        <td class="f11 ct ##DEV7BACK##">##DEV7LV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5">状況察知力</td>
+                        <td class="aqua">他者の心の状態を認識する洞察力や観察力</td>
+                        <td class="f11 ct ##DEV8BACK##">##DEV8SC##</td>
+                        <td class="f11 ct ##DEV8BACK##">##DEV8LV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5">集団適応力</td>
+                        <td class="aqua">人に関心を持ち、積極的かつ、好意的に関わる力</td>
+                        <td class="f11 ct ##DEV12BACK##">##DEV12SC##</td>
+                        <td class="f11 ct ##DEV12BACK##">##DEV12LV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                </table>
+                
+                <div class="mt5">
+                    面接時のチェックポイント<br />
+                    <table class="w100p f11 " border="1" style="border-collapse: collapse" >
+                        <tr>
+                            <td class="ct aqua w110">スコアの低い行動価値</td>
+                            <td class="ct aqua w150">リスクとなる行動</td>
+                            <td class="ct aqua w200">面接時の質問例</td>
+                            <td class="ct aqua ">判定のポイント</td>
+                        </tr>
+                        <tr>
+                            <td class="ht100 ct">##CHECKTITLE1##</td>
+                            <td class="vt">##CHECKRISK1##</td>
+                            <td class="vt">##CHECKQ1##</td>
+                            <td class="vt">##CHECKJ1##</td>
+                        </tr>
+                        <tr>
+                            <td class="ht100 ct">##CHECKTITLE2##</td>
+                            <td class="vt">##CHECKRISK2##</td>
+                            <td class="vt">##CHECKQ2##</td>
+                            <td class="vt">##CHECKJ2##</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mt5">
+                    （参考）ストレス共生力「ストレスをどの程度受け入れることができるか、というキャパシティを測定しています」
+                    <table border=1 style="border-collapse: collapse" class="w100p f8">
+                        <tr>
+                            <td class="aqua ct" rowspan="2">評価要素</td>
+                            <td class="aqua ct" rowspan="2">要素説明</td>
+                            <td class="ct w10p f12" rowspan="2">スコア</td>
+                            <td class="ct w10p f12" rowspan="2">レベル</td>
+                            <td class="ct w60" >1</td>
+                            <td class="ct w40" >2</td>
+                            <td class="ct w40" >3</td>
+                            <td class="ct w40" >4</td>
+                            <td class="ct w60" >5</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="ht20"></td>
+                        </tr>
+                        <tr >
+                            <td class="aqua pd5 ct">ストレス共生力</td>
+                            <td class="aqua">ストレスを受入れ、自分自身を調整し立ち直る力</td>
+                            <td class="f12 ct ##STBACK##">##STSC##</td>
+                            <td class="f12 ct ##STBACK##">##STLV##</td>
+                            <td colspan="5"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mt5">
+                    面接時のチェックポイント
+                    <table class="w100p f11 " border="1" style="border-collapse: collapse" >
+                        <tr>
+                            <td class="aqua ct ">リスクとなる行動</td>
+                            <td class="aqua ct w200">面接時の質問例</td>
+                            <td class="aqua ct w300">判定のポイント</td>
+                        </tr>
+                        <tr>
+                            <td class="ht80 vt">##STRESSR##</td>
+                            <td class="vt">##STRESSQ##</td>
+                            <td class="vt">##STRESSJ##</td>
+                        </tr>
+                    </table> 
+                </div>
+            </div>
+        </div>
+        <div class="lefts w50p ml40">
+            2.感情能力「周囲の人や状況を的確に認知、理解、判断し、適切に行動できる能力を測定します」<br />
+            <table border=1 style="border-collapse: collapse" class="w100p f8">
+                <tr>
+                    <td class="aqua ct " rowspan="2">評価要素</td>
+                    <td class="aqua ct" rowspan="2">要素説明</td>
+                    <td class="ct w40 f12" rowspan="2">スコア</td>
+                    <td class="ct w40 f12" rowspan="2">レベル</td>
+                    <td class="ct w60" >1</td>
+                    <td class="ct w40" >2</td>
+                    <td class="ct w40" >3</td>
+                    <td class="ct w40" >4</td>
+                    <td class="ct w60" >5</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="ht20"></td>
+                </tr>
+                <tr class="b">
+                    <td class="aqua pd5 ct ">総合</td>
+                    <td class="aqua">状況・相手に関わらず、安定的に行動を発揮する能力</td>
+                    <td class="f12 ct ##RSSOGOBACK##">##RSSOGOSC##</td>
+                    <td class="f12 ct ##RSSOGOBACK##">##RSSOGOLV##</td>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>
+                    <td class="aqua pd5">読み取り力</td>
+                    <td class="aqua">人の感情や場の雰囲気を正しく認識する能力</td>
+                    <td class="f12 ct ##RSYOMITORIBACK##">##RSYOMITORISC##</td>
+                    <td class="f12 ct ##RSYOMITORIBACK##">##RSYOMITORILV##</td>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>
+                    <td class="aqua pd5">理解力</td>
+                    <td class="aqua">人の感情や判断の原因を理解し、予測する能力</td>
+                    <td class="f12 ct ##RSRIKAIBACK##">##RSRIKAISC##</td>
+                    <td class="f12 ct ##RSRIKAIBACK##">##RSRIKAILV##</td>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>
+                    <td class="aqua pd5">選択力</td>
+                    <td class="aqua">自分をコントロールし、最善な行動を選択する能力</td>
+                    <td class="f12 ct ##RSSELECTBACK##">##RSSELECTSC##</td>
+                    <td class="f12 ct ##RSSELECTBACK##">##RSSELECTLV##</td>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>
+                    <td class="aqua pd5">切り替え力</td>
+                    <td class="aqua">人に共感を示したり、状況に応じ自らを切替る能力</td>
+                    <td class="f12 ct ##RSCHANGEBACK##">##RSCHANGESC##</td>
+                    <td class="f12 ct ##RSCHANGEBACK##">##RSCHANGELV##</td>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>
+                    <td class="aqua pd5">情報の捉え方</td>
+                    <td class="aqua">人に関心を持ち、積極的かつ、好意的に関わる力</td>
+                    <td class="f12 ct ##RSINFOBACK##">##RSINFOSC##</td>
+                    <td class="f12 ct ##RSINFOBACK##">##RSINFOLV##</td>
+                    <td colspan="5"></td>
+                </tr>
+            </table>
+
+            <div class="mt5">
+                面接時のチェックポイント<br />
+                <table class="w100p f11 " border="1" style="border-collapse: collapse" >
+                    <tr>
+                        <td class="ct aqua w110">スコアの<br />低い能力</td>
+                        <td class="ct aqua w150">リスクとなる行動</td>
+                        <td class="ct aqua w200">面接時の質問例</td>
+                        <td class="ct aqua">判定のポイント</td>
+                    </tr>
+                    <tr>
+                        <td class="ht130 ct">##RS_CHECKTITLE1##</td>
+                        <td class="vt">##RS_CHECKRISK1##</td>
+                        <td class="vt">##RS_CHECKQ1##</td>
+                        <td class="vt">##RS_CHECKJ1##</td>
+                    </tr>
+                    <tr>
+                        <td class="ht130 ct">##RS_CHECKTITLE2##</td>
+                        <td class="vt">##RS_CHECKRISK2##</td>
+                        <td class="vt">##RS_CHECKQ2##</td>
+                        <td class="vt">##RS_CHECKJ2##</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="mt5">
+                （参考）規範適応力「状況や感情にながされず、適切な判断、行動ができるかを測定しています」<br />
+
+                <table border=1 style="border-collapse: collapse" class="w100p f8">
+                    <tr>
+                        <td class="aqua ct " rowspan="2">評価要素</td>
+                        <td class="aqua ct" rowspan="2">要素説明</td>
+                        <td class="ct w40 f12" rowspan="2">スコア</td>
+                        <td class="ct w40 f12" rowspan="2">レベル</td>
+                        <td class="ct w60" >1</td>
+                        <td class="ct w40" >2</td>
+                        <td class="ct w40" >3</td>
+                        <td class="ct w40" >4</td>
+                        <td class="ct w60" >5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="ht20"></td>
+                    </tr>
+                    <tr class="">
+                        <td class="aqua pd5">規範意識</td>
+                        <td class="aqua">規範を、自分勝手な思い込みで歪曲せずに行動ができるか</td>
+                        <td class="f12 ct ##RSBACK##">##RSBASIC##</td>
+                        <td class="f12 ct ##RSBACK##">##RSBASICLV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5 ">情緒的余裕</td>
+                        <td class="aqua">周囲への影響を考慮した、余裕のある行動ができるか</td>
+                        <td class="f12 ct ##RSEMOTIONBACK##">##RSEMOTIONSC##</td>
+                        <td class="f12 ct ##RSEMOTIONBACK##">##RSEMOTIONLV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="aqua pd5">感情コントロール</td>
+                        <td class="aqua">欲求や誘惑に惑わさず、オープンな行動ができるか</td>
+                        <td class="f12 ct ##RSIMAGEBACK##">##RSIMAGESC##</td>
+                        <td class="f12 ct ##RSIMAGEBACK##">##RSIMAGELV##</td>
+                        <td colspan="5"></td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <br />
+            <div class="mt5 ">
+                面接時のチェックポイント<br />
+                <table border=1 style="border-collapse: collapse" class="w100p f11" >
+                    <tr>
+                        <td class="ct aqua" style="width:10%;">スコアの<br />低い要素</td>
+                        <td class="ct aqua " style="width:30%;">リスクとなる行動</td>
+                        <td class="ct aqua " style="width:30%;">面接時の質問例</td>
+                        <td class="ct aqua " style="width:30%;">判定のポイント</td>
+                    </tr>
+                    <tr >
+                        <td class=" ct ht145"  >##BC_CHECKTITLE1##</td>
+                        <td class=" vt">##BC_CHECKRISK1##</td>
+                        <td class=" vt">##BC_CHECKQ1##</td>
+                        <td class=" vt">##BC_CHECKJ1##</td>
+                    </tr>
+                    <tr>
+                        <td class=" ct ht143"  >##BC_CHECKTITLE2##</td>
+                        <td class=" vt">##BC_CHECKRISK2##</td>
+                        <td class=" vt">##BC_CHECKQ2##</td>
+                        <td class=" vt">##BC_CHECKJ2##</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </body>
+</html>

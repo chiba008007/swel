@@ -1,0 +1,496 @@
+<?PHP
+
+	//----------------------------------------------
+	//棒グラフ画像作成1
+	//----------------------------------------------
+	$img1 = "./images/pdf/24_1img".$id.".jpg";
+/*
+	$st_score = $sougo;
+	$st_score2 = substr($st_score, 1, 4) * 9.8;
+	if($st_score >= 80){
+		$wid = 552;
+	}elseif($st_score >= 70){
+		$wid = $st_score2 + 461.3;
+	}elseif($st_score >= 60){
+		$wid = $st_score2 + 370.8;
+	}elseif($st_score >= 50){
+		$wid = $st_score2 + 279.75;
+	}elseif($st_score >= 40){
+		$wid = $st_score2 + 188.8;
+	}elseif($st_score >= 30){
+		$wid = $st_score + 68.8;
+	}elseif($st_score >= 20){
+		$wid = $st_score2 + 1;
+	}else{
+		$wid = 1;
+	}
+*/
+	$wid = 100;
+	$im        = imagecreatetruecolor($wid, 10);
+	$img_color = imagecolorallocate($im, 1, 153, 0);
+	$gray      = imagecolorallocate($im, 169, 169, 169);
+
+	imagefill($im , 0 , 0 , $gray);
+	imagefilledrectangle($im, 1, 1, $wid-2, 8, $img_color);
+
+	$text_color = imagecolorallocate($im, 255, 0, 0);
+	imagestring($im, 1, 5, 5,  "", $text_color);
+	imagejpeg($im, $img1);
+	imagedestroy($im);
+
+	//----------------------------------------------
+	//棒グラフ画像作成2
+	//----------------------------------------------
+	$img2 = "./images/pdf/24_2img".$id.".jpg";
+/*
+	$st_score = $sougo;
+	$st_score2 = substr($st_score, 1, 4) * 9.8;
+	if($st_score >= 80){
+		$wid = 552;
+	}elseif($st_score >= 70){
+		$wid = $st_score2 + 461.3;
+	}elseif($st_score >= 60){
+		$wid = $st_score2 + 370.8;
+	}elseif($st_score >= 50){
+		$wid = $st_score2 + 279.75;
+	}elseif($st_score >= 40){
+		$wid = $st_score2 + 188.8;
+	}elseif($st_score >= 30){
+		$wid = $st_score + 68.8;
+	}elseif($st_score >= 20){
+		$wid = $st_score2 + 1;
+	}else{
+		$wid = 1;
+	}
+*/
+	$wid = 190;
+	$im        = imagecreatetruecolor($wid, 10);
+	$img_color = imagecolorallocate($im, 1, 153, 0);
+	$gray      = imagecolorallocate($im, 169, 169, 169);
+
+	imagefill($im , 0 , 0 , $gray);
+	imagefilledrectangle($im, 1, 1, $wid-2, 8, $img_color);
+
+	$text_color = imagecolorallocate($im, 255, 0, 0);
+	imagestring($im, 1, 5, 5,  "", $text_color);
+	imagejpeg($im, $img2);
+	imagedestroy($im);
+
+	//----------------------------------------------
+	//棒グラフ画像作成3
+	//----------------------------------------------
+	$img3 = "./images/pdf/24_3img".$id.".jpg";
+/*
+	$st_score = $sougo;
+	$st_score2 = substr($st_score, 1, 4) * 9.8;
+	if($st_score >= 80){
+		$wid = 552;
+	}elseif($st_score >= 70){
+		$wid = $st_score2 + 461.3;
+	}elseif($st_score >= 60){
+		$wid = $st_score2 + 370.8;
+	}elseif($st_score >= 50){
+		$wid = $st_score2 + 279.75;
+	}elseif($st_score >= 40){
+		$wid = $st_score2 + 188.8;
+	}elseif($st_score >= 30){
+		$wid = $st_score + 68.8;
+	}elseif($st_score >= 20){
+		$wid = $st_score2 + 1;
+	}else{
+		$wid = 1;
+	}
+*/
+	$wid = 110;
+	$im        = imagecreatetruecolor($wid, 10);
+	$img_color = imagecolorallocate($im, 1, 153, 0);
+	$gray      = imagecolorallocate($im, 169, 169, 169);
+
+	imagefill($im , 0 , 0 , $gray);
+	imagefilledrectangle($im, 1, 1, $wid-2, 8, $img_color);
+
+	$text_color = imagecolorallocate($im, 255, 0, 0);
+	imagestring($im, 1, 5, 5,  "", $text_color);
+	imagejpeg($im, $img3);
+	imagedestroy($im);
+
+	//----------------------------------------------
+	//棒グラフ画像作成4
+	//----------------------------------------------
+	$img4 = "./images/pdf/24_4img".$id.".jpg";
+/*
+	$st_score = $sougo;
+	$st_score2 = substr($st_score, 1, 4) * 9.8;
+	if($st_score >= 80){
+		$wid = 552;
+	}elseif($st_score >= 70){
+		$wid = $st_score2 + 461.3;
+	}elseif($st_score >= 60){
+		$wid = $st_score2 + 370.8;
+	}elseif($st_score >= 50){
+		$wid = $st_score2 + 279.75;
+	}elseif($st_score >= 40){
+		$wid = $st_score2 + 188.8;
+	}elseif($st_score >= 30){
+		$wid = $st_score + 68.8;
+	}elseif($st_score >= 20){
+		$wid = $st_score2 + 1;
+	}else{
+		$wid = 1;
+	}
+*/
+	$wid = 110;
+	$im        = imagecreatetruecolor($wid, 10);
+	$img_color = imagecolorallocate($im, 1, 153, 0);
+	$gray      = imagecolorallocate($im, 169, 169, 169);
+
+	imagefill($im , 0 , 0 , $gray);
+	imagefilledrectangle($im, 1, 1, $wid-2, 8, $img_color);
+
+	$text_color = imagecolorallocate($im, 255, 0, 0);
+	imagestring($im, 1, 5, 5,  "", $text_color);
+	imagejpeg($im, $img4);
+	imagedestroy($im);
+
+	//----------------------------------------------
+	//棒グラフ画像作成5
+	//----------------------------------------------
+	$img5 = "./images/pdf/24_5img".$id.".jpg";
+/*
+	$st_score = $sougo;
+	$st_score2 = substr($st_score, 1, 4) * 9.8;
+	if($st_score >= 80){
+		$wid = 552;
+	}elseif($st_score >= 70){
+		$wid = $st_score2 + 461.3;
+	}elseif($st_score >= 60){
+		$wid = $st_score2 + 370.8;
+	}elseif($st_score >= 50){
+		$wid = $st_score2 + 279.75;
+	}elseif($st_score >= 40){
+		$wid = $st_score2 + 188.8;
+	}elseif($st_score >= 30){
+		$wid = $st_score + 68.8;
+	}elseif($st_score >= 20){
+		$wid = $st_score2 + 1;
+	}else{
+		$wid = 1;
+	}
+*/
+	$wid = 110;
+	$im        = imagecreatetruecolor($wid, 10);
+	$img_color = imagecolorallocate($im, 1, 153, 0);
+	$gray      = imagecolorallocate($im, 169, 169, 169);
+
+	imagefill($im , 0 , 0 , $gray);
+	imagefilledrectangle($im, 1, 1, $wid-2, 8, $img_color);
+
+	$text_color = imagecolorallocate($im, 255, 0, 0);
+	imagestring($im, 1, 5, 5,  "", $text_color);
+	imagejpeg($im, $img5);
+	imagedestroy($im);
+
+	//----------------------------------------------
+	//棒グラフ画像作成6
+	//----------------------------------------------
+	$img6 = "./images/pdf/24_6img".$id.".jpg";
+/*
+	$st_score = $sougo;
+	$st_score2 = substr($st_score, 1, 4) * 9.8;
+	if($st_score >= 80){
+		$wid = 552;
+	}elseif($st_score >= 70){
+		$wid = $st_score2 + 461.3;
+	}elseif($st_score >= 60){
+		$wid = $st_score2 + 370.8;
+	}elseif($st_score >= 50){
+		$wid = $st_score2 + 279.75;
+	}elseif($st_score >= 40){
+		$wid = $st_score2 + 188.8;
+	}elseif($st_score >= 30){
+		$wid = $st_score + 68.8;
+	}elseif($st_score >= 20){
+		$wid = $st_score2 + 1;
+	}else{
+		$wid = 1;
+	}
+*/
+	$wid = 110;
+	$im        = imagecreatetruecolor($wid, 10);
+	$img_color = imagecolorallocate($im, 1, 153, 0);
+	$gray      = imagecolorallocate($im, 169, 169, 169);
+
+	imagefill($im , 0 , 0 , $gray);
+	imagefilledrectangle($im, 1, 1, $wid-2, 8, $img_color);
+
+	$text_color = imagecolorallocate($im, 255, 0, 0);
+	imagestring($im, 1, 5, 5,  "", $text_color);
+	imagejpeg($im, $img6);
+	imagedestroy($im);
+
+	//----------------------------------------------
+	//棒グラフ画像作成2
+	//----------------------------------------------
+	$img7 = "./images/pdf/24_7img".$id.".jpg";
+/*
+	$st_score = $sougo;
+	$st_score2 = substr($st_score, 1, 4) * 9.8;
+	if($st_score >= 80){
+		$wid = 552;
+	}elseif($st_score >= 70){
+		$wid = $st_score2 + 461.3;
+	}elseif($st_score >= 60){
+		$wid = $st_score2 + 370.8;
+	}elseif($st_score >= 50){
+		$wid = $st_score2 + 279.75;
+	}elseif($st_score >= 40){
+		$wid = $st_score2 + 188.8;
+	}elseif($st_score >= 30){
+		$wid = $st_score + 68.8;
+	}elseif($st_score >= 20){
+		$wid = $st_score2 + 1;
+	}else{
+		$wid = 1;
+	}
+*/
+	$ht = 110;
+	$im        = imagecreatetruecolor(20, $ht);
+	$img_color = imagecolorallocate($im, 255, 0, 0);
+	$gray      = imagecolorallocate($im, 255, 0, 0);
+
+	imagefill($im , 0 , 0 , $gray);
+	imagefilledrectangle($im, 1, 1, 10, $ht, $img_color);
+
+	$text_color = imagecolorallocate($im, 255, 0, 0);
+	imagestring($im, 1, 5, 5,  "", $text_color);
+	imagejpeg($im, $img7);
+	imagedestroy($im);
+
+
+
+	//--------------------------------
+	//PDF出力
+	//--------------------------------
+	//PDF個人情報入力
+	$make->makePdfKozin($pdf,$testdata,24);
+
+	$pdf->SetFontSize(9);
+	$pdf->Ln(2);
+	//↓1.ストレス共生力↓
+	$pdf->Write("5","1.要注意が3つ以上ある場合は自身の言動をしっかり振り返りましょう。");
+	$pdf->Ln(5);
+	$pdf->SetXY(148, 43);
+	$pdf->MultiCell(20,3, "項目別", 0);
+	$pdf->SetXY(164, 43);
+	$pdf->MultiCell(25,3, "総合(7.0 /10)", 0);
+	$pdf->SetFontSize(6);
+	$pdf->SetXY(5.0, 53);
+	$pdf->MultiCell(4,2, "モニタリング領域", 0);
+	$pdf->SetFontSize(9);
+
+	$pdf->SetXY(10, 47);
+	$pdf->MultiCell(30,8, "対人共感リスク", 1,"C");
+	$pdf->SetXY(10, 56);
+	$pdf->MultiCell(30,8, "状況察知リスク", 1,"C");
+	$pdf->SetXY(10, 65);
+	$pdf->MultiCell(30,4, "自己客観視\nリスク", 1,"C");
+
+	$pdf->SetXY(40, 47);
+	//棒グラフの表示
+	$pdf->Image($img1, 40, 50);
+	$pdf->Image($img2, 40, 59);
+	$pdf->Image($img3, 40, 68);
+	$pdf->Image($img4, 40, 80);
+	$pdf->Image($img5, 40, 89);
+	$pdf->Image($img6, 40, 98);
+	$pdf->Image($img7, 172, 73.8);
+
+	$pdf->MultiCell(100,8, "", 1,"C");
+	$pdf->SetXY(40, 56);
+	$pdf->MultiCell(100,8, "", 1,"C");
+	$pdf->SetXY(40, 65);
+	$pdf->MultiCell(100,8, "", 1,"C");
+	$pdf->SetFontSize(7);
+	$pdf->SetXY(142, 47);
+	$pdf->MultiCell(10,8, "10.0", 1,"C");
+	$pdf->SetXY(154, 47);
+	$pdf->MultiCell(10,8, "危険", 1,"C");
+
+	$pdf->SetXY(142, 56);
+	$pdf->MultiCell(10,8, "10.0", 1,"C");
+	$pdf->SetXY(154, 56);
+	$pdf->MultiCell(10,8, "要注意", 1,"C");
+
+	$pdf->SetXY(142, 65);
+	$pdf->MultiCell(10,8, "10.0", 1,"C");
+	$pdf->SetXY(154, 65);
+	$pdf->MultiCell(10,8, "注意", 1,"C");
+
+	$pdf->SetDrawColor(0, 102, 255);
+	$pdf->SetLineWidth(1.0);
+	$pdf->Line(10.5, 75.0, 163.5, 75.0);
+	$pdf->SetLineWidth(0.1);
+	$pdf->SetDrawColor(0, 0, 0);
+
+	$pdf->SetFontSize(6);
+	$pdf->SetXY(5.0, 78);
+	$pdf->MultiCell(4,2, "セルフマネジメント領域", 0);
+	$pdf->SetFontSize(9);
+	$pdf->SetXY(10, 77);
+	$pdf->MultiCell(30,4, "感情コント\nロールリスク", 1,"C");
+	$pdf->SetXY(10, 86);
+	$pdf->MultiCell(30,4, "ポジティブ\n思考リスク", 1,"C");
+	$pdf->SetXY(10, 95);
+	$pdf->MultiCell(30,8, "自己肯定リスク", 1,"C");
+
+	$pdf->SetXY(40, 77);
+	$pdf->MultiCell(100,8, "", 1,"C");
+	$pdf->SetXY(40, 86);
+	$pdf->MultiCell(100,8, "", 1,"C");
+	$pdf->SetXY(40, 95);
+	$pdf->MultiCell(100,8, "", 1,"C");
+	$pdf->SetFontSize(7);
+	$pdf->SetXY(142, 77);
+	$pdf->MultiCell(10,8, "10.0", 1,"C");
+	$pdf->SetXY(154, 77);
+	$pdf->MultiCell(10,8, "危険", 1,"C");
+
+	$pdf->SetXY(142, 86);
+	$pdf->MultiCell(10,8, "10.0", 1,"C");
+	$pdf->SetXY(154, 86);
+	$pdf->MultiCell(10,8, "要注意", 1,"C");
+
+	$pdf->SetXY(142, 95);
+	$pdf->MultiCell(10,8, "10.0", 1,"C");
+	$pdf->SetXY(154, 95);
+	$pdf->MultiCell(10,8, "-", 1,"C");
+
+	//縦
+	$pdf->SetXY(167, 47);
+	$pdf->MultiCell(15,56, "", 1,"C");
+	
+	//一番した
+	$pdf->SetDrawColor(0, 102, 255);//青
+
+	//$pdf->Line(167, 47, 182, 47);
+	$pdf->Line(167, 52.6, 182, 52.6);
+	//$pdf->Line(167, 58.2, 182, 58.2);
+	$pdf->SetXY(182,52);
+	$pdf->MultiCell(9,3, "危険水域", 0);
+	//点線
+	$pdf->SetLineWidth(0.3);
+	$pdf->Line(167, 58.2, 168, 58.2);
+	$pdf->Line(169, 58.2, 170, 58.2);
+	$pdf->Line(171, 58.2, 172, 58.2);
+	$pdf->Line(173, 58.2, 174, 58.2);
+	$pdf->Line(175, 58.2, 176, 58.2);
+	$pdf->Line(177, 58.2, 178, 58.2);
+	$pdf->Line(179, 58.2, 180, 58.2);
+	$pdf->Line(181, 58.2, 182, 58.2);
+	$pdf->Line(183, 58.2, 184, 58.2);
+	$pdf->Line(185, 58.2, 186, 58.2);
+	$pdf->Line(187, 58.2, 188, 58.2);
+	$pdf->SetLineWidth(0.1);
+	//点線終わり
+	$pdf->Line(167, 63.8, 182, 63.8);
+	$pdf->Line(167, 69.4, 182, 69.4);
+	$pdf->Line(167, 75  , 182, 75  );
+	$pdf->SetXY(182,75);
+	$pdf->MultiCell(10,3, "要注意水域", 0);
+	//点線
+	$pdf->SetLineWidth(0.3);
+	$pdf->Line(167, 80.6, 168, 80.6);
+	$pdf->Line(169, 80.6, 170, 80.6);
+	$pdf->Line(171, 80.6, 172, 80.6);
+	$pdf->Line(173, 80.6, 174, 80.6);
+	$pdf->Line(175, 80.6, 176, 80.6);
+	$pdf->Line(177, 80.6, 178, 80.6);
+	$pdf->Line(179, 80.6, 180, 80.6);
+	$pdf->Line(181, 80.6, 182, 80.6);
+	$pdf->Line(183, 80.6, 184, 80.6);
+	$pdf->Line(185, 80.6, 186, 80.6);
+	$pdf->Line(187, 80.6, 188, 80.6);
+	$pdf->SetLineWidth(0.1);
+	//点線終わり
+
+	$pdf->Line(167, 86.2, 182, 86.2);
+	$pdf->Line(167, 91.8, 182, 91.8);
+	$pdf->Line(167, 97.4, 182, 97.4);
+	$pdf->SetXY(182, 98);
+	$pdf->MultiCell(9,3, "注意水域", 0);
+
+	//$pdf->Line(167, 103 , 182, 103 );
+
+	$pdf->SetFontSize(9);
+	$pdf->Ln(1);
+	$pdf->Write("5","2.パワハラリスクの全体傾向");
+	$pdf->SetDrawColor(0, 0, 0);
+	$pdf->SetXY(10, 110);
+	for($i=0;$i<300;$i++){
+		$str300 .= "あ";
+	}
+	$pdf->MultiCell(190,6, $str300, 1);
+
+	$pdf->Ln(4);
+	$pdf->Write("5","3.一番留意すべき項目の傾向");
+	$pdf->SetDrawColor(0, 0, 0);
+	$pdf->SetXY(10, 155);
+	for($i=0;$i<250;$i++){
+		$str250 .= "あ";
+	}
+	$pdf->MultiCell(90,6, $str250, 1);
+	$pdf->SetXY(110, 150);
+	$pdf->Write("5","4.一番、留意すべき項目についての道しるべ");
+	$pdf->SetXY(110, 155);
+	$pdf->SetFontSize(9);
+	$pdf->MultiCell(90,6, $str250, 1);
+	
+	$pdf->SetXY(10, 219);
+	$pdf->Write("5","5.こんな言動に身に覚えがありませんか？");
+	$pdf->SetXY(10, 224);
+	$pdf->MultiCell(90,5, "①状況察知リスク", 1,"C");
+	$pdf->SetXY(10, 229);
+	$list = "
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			";
+	$pdf->MultiCell(90,3, $list, 1);
+
+	$pdf->SetXY(110, 224);
+	$pdf->MultiCell(90,5, "②感情コントロールリスク", 1,"C");
+	$pdf->SetXY(110, 229);
+	$list = "
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			■---------------------------------------------\n
+			";
+	$pdf->MultiCell(90,3, $list, 1);
+
+
+	$pdf->Ln(5);
+	$pdf->SetFontSize(7);
+	$pdf->Cell(192, 1, 'powered by Innovation Gate ,Inc.', 0,1,'R');
+	//--------------------------------
+	//作成した画像の削除
+	//--------------------------------
+	unlink($img1);
+	unlink($img2);
+	unlink($img3);
+	unlink($img4);
+	unlink($img5);
+	unlink($img6);
+	unlink($img7);
+
+	//--------------------------------
+	//作成した画像の削除終わり
+	//--------------------------------
+
+
+?>

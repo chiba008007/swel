@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+
+            .h1,
+            h1{ font-size:24px;}
+            .h2{font-size:22px;}
+            h3{ font-size:16px;font-weight:normal;}
+            h4{ font-size:12px;
+                padding:0;
+                margin:0;
+            }
+            .mt10{
+                margin-top:10px;
+            }
+            .tbl1{
+               
+                width:100%;
+                margin-top:5px;
+                border-collapse:collapse;
+                
+            }
+            .tbl1 td{
+                text-align: center;
+                padding:6px;
+                border-right:1px solid #E0E0E7;
+                border-top:1px solid #E0E0E7;
+                border-bottom:1px solid #E0E0E7;
+                font-size:11.5px;
+            }
+            .tbl1 td.none{
+                border-right:none;
+            }
+            
+            .bargraph{
+                margin-top:10px;
+            }
+            #grapharea{
+                position:absolute;
+                width:800px;
+                height:500px;
+                background-image:url('/images/pdf/pdf31/waku.png');
+                background-repeat: no-repeat;
+                background-size:contain;
+            }
+            
+            table.bluetable{
+              
+                border-collapse:collapse;
+                width:100%;
+                position:absolute;
+                margin-top:0px;
+            }
+            table.bluetable td{
+                border-left:1px solid #E0E0E7;
+                border-right:1px solid #E0E0E7;
+                border-bottom: 1px solid #E0E0E7;
+                font-size:11.5px;
+                height:10px;
+            }
+            table.bluetable td.noboard{
+                border-top:0px;
+                border-left:0px;
+                border-right:0px;
+            }
+            table.bluetable td.noboard2{
+                border-top:0px;
+                border-left:0px;
+                border-right:0px;
+                border-bottom: 0px;
+            }
+            table.bluetable td.ct{
+                text-align:center;
+            }
+            table.bluetable td.blue{
+                background-color:#0054A6;
+                color:#fff;
+                text-align: center;
+                width:60px;
+            }
+            table.bluetable td.yellow{
+                background-color:#ffff00;
+            }
+            
+            table.bluetable td.w80{
+                width:80px;
+            }
+            table.bluetable td.w90{
+                width:90px;
+            }
+            table.bluetable td.w150{
+                width:150px;
+            }
+            table.bluetable td.num{
+                font-size:11.5px;
+                text-align:center;
+            }
+            table.bluetable td.f11{
+                font-size:11px;
+                text-align: center;
+                padding:3px;
+                height:30px;
+            }
+            table.bluetable td.f13{
+                font-size:13px;
+                text-align: center;
+                padding:3px;
+                height:40px;
+            }
+            
+            img#graph{
+                position:absolute;
+            }
+            
+            table.dot{
+                width:450px;
+                position: absolute;
+                margin-top:-40px;
+                margin-left:40px;
+            }
+            table.dot td{
+                border-right:1px dotted #E0E0E7;
+                height:40px;
+                width:90px;
+            }
+            
+            div#inner{
+                position:absolute;
+                margin-top:-384px;
+                padding-left:245px;
+                
+            }
+            img#innerimg{
+                opacity: 0.6;
+                width:62%;
+            }
+            #back1{
+                position:absolute;
+            }
+            
+            #strarea{
+                 position:absolute;
+                margin-top:-500px;
+            }
+            
+            div.area{
+                 position:absolute !important;
+                 top:0;
+                 left:0;
+                 font-size:11px;
+            }
+            #str1{
+                position:absolute;
+                margin:0px;
+                margin-left:160px;
+                margin-top:8px;
+                font-size:14px;
+            }
+            #str2{
+                position:absolute;
+                margin:0px;
+                margin-top:-36px;
+                font-size:14px;
+                text-align: right;
+                display:block;
+                width:540px;
+            }
+            #str3{
+                position:absolute;
+                margin:0px;
+                margin-left:80px;
+                margin-top:13px;
+                font-size:14px;
+            }
+            #str4{
+                position:absolute;
+                margin:0px;
+                margin-top:-36px;
+                font-size:14px;
+                text-align: right;
+                display:block;
+                width:600px;
+            }
+            
+            #str5{
+                position:absolute;
+                margin:0px;
+                margin-left:15px;
+                margin-top:55px;
+                font-size:14px;
+            }
+            #str6{
+                position:absolute;
+                margin:0px;
+                margin-top:-38px;
+                font-size:14px;
+                text-align: right;
+                display:block;
+                width:680px;
+            }
+            
+            #str7{
+                position:absolute;
+                margin:0px;
+                margin-left:15px;
+                margin-top:65px;
+                font-size:14px;
+            }
+            #str8{
+                position:absolute;
+                margin:0px;
+                margin-top:-54px;
+                font-size:14px;
+                text-align: right;
+                display:block;
+                width:140px;
+                margin-left:520px;
+            }
+            
+            #str9{
+                position:absolute;
+                margin:0px;
+                margin-left:60px;
+                margin-top:50px;
+                font-size:14px;
+            }
+            #str10{
+                position:absolute;
+                margin:0px;
+                margin-top:-35px;
+                font-size:14px;
+                display:block;
+                width:100px;
+                margin-left:500px;
+                text-align: right;
+            }
+            
+            #str11{
+                position:absolute;
+                margin:0px;
+                margin-left:150px;
+                margin-top:15px;
+                font-size:14px;
+            }
+            #str12{
+                position:absolute;
+                margin:0px;
+                margin-top:-36px;
+                font-size:13px;
+                display:block;
+                width:140px;
+                margin-left:400px;
+                text-align: right;
+            }
+            span.f9{
+                font-size:12.5px !important;
+            }
+            table.msgtable{
+                border-collapse:collapse;
+                width:100%;
+                border:1px solid #E0E0E7;
+            }
+            table.msgtable td{
+                
+                padding:5px;
+                width:360px;
+                vertical-align: top;
+            }
+            
+            table.msgtable td:nth-child(2){
+                width:460px;
+                padding:5px;
+                vertical-align: top;
+                border-left:1px solid #E0E0E7;
+            }
+            
+            div#points{
+                position:absolute;
+                margin-top:-460px;
+                padding-left:335px;
+                width:100%;
+            }
+            div#point1{
+                font-size:8.5px;
+                width:100px;
+            }
+            div.point2{
+                font-size:8.5px;
+                width:100px;
+                margin-top:16px;
+            }
+           
+            .numline{
+                position:absolute;
+                 margin:0;
+            }
+            span.num2{
+                font-size:9px;
+                 position:absolute;
+                 margin:0;
+                 
+            }
+            
+            .arrowarea{
+                position:absolute;
+                margin-top:-90px;
+                
+            }
+            img.ya_left{
+                position:absolute;
+               padding-left:120px;
+            }
+            img.ya_right{
+                position:absolute;
+               padding-left:270px;
+            }
+            
+            img.ya_left2{
+                position:absolute;
+               padding-left:452px;
+            }
+            img.ya_right2{
+                position:absolute;
+               padding-left:588px;
+            }
+            
+            .area1{
+                position:absolute;
+                margin-top:65px;
+                padding-left:15px;
+                color:#4169e1;
+                font-size:12px;
+            }
+            .area2{
+                position:absolute;
+                margin-top:65px;
+                padding-left:580px;
+                color:#4169e1;
+                font-size:12px;
+            }
+            
+             .area3{
+                position:absolute;
+                margin-top:460px;
+                padding-left:15px;
+                color:#4169e1;
+                font-size:12px;
+            }
+            .area4{
+                position:absolute;
+                margin-top:460px;
+                padding-left:580px;
+                color:#4169e1;
+                font-size:12px;
+            }
+            
+            /*
+            div.box{
+                border:1px solid #E0E0E7;
+                padding:5px;
+            }
+            */
+            div.box{
+                border:0.3px solid #ccc;
+                background-repeat: no-repeat;
+                background-size:100%;
+                padding:5px;
+                
+            }
+            div.box p{
+                line-height: 14.8px;
+            }
+            
+            table.box{
+                border-collapse: collapse;
+                width:100%;
+            }
+            table.box th{
+                border-bottom:0.3px solid #ccc;
+                font-size:12px;
+                font-weight: normal;
+                vertical-align: top;
+                text-align: left;
+                padding:5px;
+            }
+            table.box td{
+                font-size:12px;
+                padding:5px;
+                border-left:0.3px solid #ccc;
+                border-right:0.3px solid #ccc;
+                border-bottom:0.3px solid #ccc;
+                
+                vertical-align: top;
+            }
+            table.box td.first{
+                width:42%;
+            }
+            table.box th.th{
+                border: 0.3px solid #ccc;
+                border-left:0px;
+                border-right:0px;
+                border-top:0px;
+            }
+            table#pointtable{
+                width:100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            table#pointtable td{
+                width:90px;
+                border:none;
+                padding:0;
+                margin:0;
+            }
+            table#pointtable td:nth-child(7){
+                width:10px;
+            }
+            
+            .scorearea{
+                position:absolute;
+                width:680px;
+                margin-top:-50px;
+               
+            }
+            div.points{
+                position: absolute;
+                width:60px;
+                font-size:11px;
+                left:49.5%;
+            }
+            
+            .scores{
+                position: absolute;
+                color:#4169e1;
+                font-size:12px;
+            }
+            .pdflogo{
+                position:absolute;
+                bottom:0;
+                left:auto;
+                right:0;
+            }
+        </style>    
+    </head>
+    <body >
+        <table width="100%">
+            <tr>
+                <td><span class="h1">個人結果シート</span><span class="h2">（面接版）</span></td>
+                <td align="right"><h3>企業名：##COMPANY##</h3></td>
+            </tr>
+        </table>
+        
+        <table class="tbl1">
+            <tr>
+                <td>受検日</td>
+                <td>##examdate##</td>
+                <td>受検者ID</td>
+                <td>##EXAMID##</td>
+                <td>氏名</td>
+                <td>##NAMAE##</td>
+                <td>年齢</td>
+                <td class="none">##AGE##</td>
+            </tr>
+        </table>
+        
+        <div class="bargraph">
+                 
+            <table class="bluetable">
+                
+                <tr>
+                    <td colspan="2" class="noboard"><h3>1.ストレス共生力 </h3></td>
+                    <td colspan="2" class="noboard num ct">低い</td>
+                    <td class="noboard num ct">標準</td>
+                    <td colspan="2" class="noboard num ct" >高い</td>
+                </tr>
+                <tr>
+                    <td class="blue" rowspan="2">スコア</td>
+                    <td class="blue" rowspan="2">レベル</td>
+                    <td class="num w150">1</td>
+                    <td class="w90 num">2</td>
+                    <td class="yellow w90 num">3</td>
+                    <td class="w90 num">4</td>
+                    <td class="num">5</td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <div class="numline">
+                            <table id="pointtable">
+                                <tr>
+                                    <td>20</td>
+                                    <td>30</td>
+                                    <td>40</td>
+                                    <td>50</td>
+                                    <td>60</td>
+                                    <td>70</td>
+                                    <td>80</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="f13">##point1##</td>
+                    <td class="f13">##level1##</td>
+                    <td colspan="5">
+                        <img src="/images/pdf/pdf31/img##ID##.jpg" id="graph"  />
+                       
+                    </td>
+                </tr>
+            </table>
+            <table class="dot">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        <div class="arrowarea">
+            <img src="/images/pdf/pdf31/left.png" class="ya_left" />
+        </div>
+        <div class="arrowarea">
+             <img src="/images/pdf/pdf31/right.png" class="ya_right" />
+        </div>
+        
+        <div class="arrowarea">
+            <img src="/images/pdf/pdf31/left.png" class="ya_left2" />
+        </div>
+        <div class="arrowarea">
+             <img src="/images/pdf/pdf31/right.png" class="ya_right2" />
+        </div>
+
+        <div class="scores" style="top:22%;left:10%;">対人影響力＞＞</div>
+        <div class="scores" style="top:22%;left:80%;">＜＜自己認知力</div>
+        <div class="scores" style="top:58%;left:10%;">対人認知力＞＞</div>
+        <div class="scores" style="top:58%;left:80%;">＜＜自己安定力</div>
+        <h3 style="margin-top:10px;position:absolute;">2．##NAMAE##さんの行動価値結果　12特性のスコアとチャート</h3>
+        <div style="margin-top:30px">
+            
+            <div  id="grapharea" >
+                
+
+            </div>
+        </div>
+
+
+        
+        <div class="area" style="top:22.5%;left:34%;" >集団適応力</div><div style="top:23.5%;left:34%;position:absolute;">##dev12##</div>
+            <div class="area" style="top:22.5%;left:61%;">自己感情モニタリング力</div><div style="top:23.5%;left:72%;position:absolute;">##dev1##</div>
+            
+            <div class="area" style="top:27.0%;left:18%;" >アサーション発揮力</div><div style="top:28.0%;left:18%;position:absolute;">##dev11##</div>
+            <div class="area" style="top:27.0%;left:70%;">客観的自己評価力</div><div style="top:28.0%;left:78%;position:absolute;">##dev2##</div>
+            
+            <div class="area" style="top:35.0%;left:10%;" >リーダーシップ発揮力</div><div style="top:36.0%;left:10%;position:absolute;">##dev10##</div>
+            <div class="area" style="top:35.0%;left:76%;" >自己肯定力</div><div style="top:36.0%;left:80%;position:absolute;">##dev3##</div>
+            
+            <div class="area"  style="top:44.0%;left:10%;">ホスピタリティ発揮力</div><div style="top:45.6%;left:10%;position:absolute;">##dev9##</div>
+            <div class="area" style="top:42.5%;left:79%;" >コントロール＆<br />アチーブメント力</div><div style="top:45.5%;left:85%;position:absolute;">##dev4##</div>
+            
+            <div class="area" style="top:52.0%;left:23%;" >状況察知力</div><div style="top:53.2%;left:23%;position:absolute;">##dev8##</div>
+            <div class="area" style="top:52.0%;left:70%;" >ビジョン創出力</div><div style="top:53.2%;left:76%;position:absolute;">##dev5##</div>
+            
+            <div class="area" style="top:57.0%;left:34%;">対人共感力</div><div style="top:58.2%;left:34%;position:absolute;">##dev7##</div>
+            <div class="area" style="top:57.0%;left:60%;">ポジティブ思考力</div><div style="top:58.2%;left:66%;position:absolute;">##dev6##</div>
+            
+       
+        
+        <div style="position:absolute;margin-top:-489px;padding-left:0px;">
+            <img src="/images/pdf/pdf31/graf##ID##.png"  />
+        </div>
+        <div style="top:25.5%;" class="points" >80</div>
+        <div style="top:28.0%;" class="points" >70</div>
+        <div style="top:30.5%;" class="points" >60</div>
+        <div style="top:33.0%;" class="points" >50</div>
+        <div style="top:35.7%;" class="points" >40</div>
+        <div style="top:38.0%;" class="points" >30</div>
+        <div style="top:41.0%;" class="points" >20</div>
+        
+        <div class="scorearea" >
+            <h3>3.##NAMAE## さんへの質問例（スコアの低い行動価値）</h3>
+            <table class="box">
+                <tr>
+                    <th colspan="2" class="th">
+                        <h4 style="margin-top:15px;" >① ##STRING1##</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="first" >
+                        <img src="/images/pdf/pdf31/pdf31.png"  width="100" /><br />
+                        ##STRING2##
+                    </td>
+                    <td >
+                        ▼リスクとなる行動<br />
+                        ##STRING3##
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ▼判定のポイント<br />
+                        ##STRING4##
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="th">
+                        <h4 style="margin-top:15px;" >② ##STRING5##</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="first" >
+                        <img src="/images/pdf/pdf31/pdf31.png"  width="100" /><br />
+                        ##STRING6##
+                    </td>
+                    <td >
+                        ▼リスクとなる行動<br />
+                        ##STRING7##
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ▼判定のポイント<br />
+                        ##STRING8##
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="pdflogo">
+        <img src="/images/pdf/pdflogo.png"   />
+        </div>
+    </body>
+</html>
