@@ -37,6 +37,7 @@ innov.key
 inquiry.php
 js/
 t/
+swel/
 logofileup.php
 manualfileup.php
 mbfpdf.php
@@ -59,3 +60,4 @@ test.txt
 timeout.php
 tk.php
 tmpfileup.php
+serverinfo.txt
