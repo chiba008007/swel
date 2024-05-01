@@ -71,7 +71,7 @@ $(function() {
 		<li><a href="/index/home/">HOME</a></li>
 <?PHP
 
-if(count($pan)){
+if(isset($pan) && count($pan)){
 	foreach($pan as $key=>$val){
 		if($val[0]){
 ?>
