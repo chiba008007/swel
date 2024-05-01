@@ -183,5 +183,55 @@ class cusCsvUpMethod extends method{
 
 	}
 
+	public function getTestData($where){
+		$partner_id  = $where[ 'partner_id'  ];
+		$customer_id = $where[ 'customer_id' ];
+		$testgrp_id  = $where[ 'testgrp_id'  ];
+
+		$sql  = "";
+		$sql  = " SELECT ";
+		$sql .= " * ";
+		$sql .= " FROM ";
+		$sql .= " t_testpaper ";
+		$sql .= " WHERE ";
+		$sql .= " partner_id=".$partner_id." AND ";
+		$sql .= " customer_id=".$customer_id." AND ";
+		$sql .= " testgrp_id=".$testgrp_id."  ";
+		if($_REQUEST[ 'type' ] == 1){
+			$sql .= "AND exam_state = 0 ";
+		}
+		$sql .= " GROUP BY number ";
+		if($_REQUEST[ 'type' ] == 1){
+			$sql .= " HAVING count(*) >= (SELECT MAX(a.cnt) as max FROM (SELECT count(*) as cnt FROM igtests_innov.t_testpaper where testgrp_id=".$testgrp_id." AND exam_state=0 GROUP BY number) as a)";
+		}
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+
+		$i=0;
+		$rlt = [];
+		while($list = $stmt->fetch(PDO::FETCH_ASSOC)){
+			$rlt[$list[ 'number' ]] = $list;
+			$i++;
+		}
+		return $rlt;
+	}
+
+	public function doSql($sql){
+
+		$stmt = $this->db->prepare($sql);
+		return $stmt->execute();
+	}
+	public function doGetSql($sql){
+
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+		$i=0;
+		$rlt = [];
+		while($list = $stmt->fetch(PDO::FETCH_ASSOC)){
+			$rlt[$list[ 'number' ]] = $list;
+			$i++;
+		}
+		return $rlt;
+	}
 }
 ?>

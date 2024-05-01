@@ -14,6 +14,13 @@ require_once("./lib/include_cusCsvUp.php");
 $obj = new cusCsvUpMethod();
 
 if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
+	// 今登録済みのデータ取得
+	$sql = "SELECT id,exam_id,number FROM t_testpaper WHERE testgrp_id=".$sec;
+	$data = $obj->doGetSql($sql);
+	$checklist = [];
+	foreach($data as $k=>$val){
+		$checklist[$val[ 'exam_id' ]] = $val[ 'number' ];
+	}
 
 	$tmp = fopen($_FILES['upfile']['tmp_name'], "r");
 	setlocale(LC_ALL, 'ja_JP.UTF-8');
@@ -65,6 +72,14 @@ if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
 
     ////////////////////////////////////////////////////////
 	 ////ファイル内に重複するIDがある場合：（両方ともエラー、エラーの種類：“ファイル内重複エラー” ）
+	 foreach($lists as $key=>$val){
+		if($checklist[ $val[ 'exam_id' ]] != $val[ 'number' ]){
+			$errmsg = "ファイルのIDが検査内のIDと一致しないか確認してください。";
+			$errtext[$val[ 'exam_id' ]] = "IDは既に登録されています";
+			$errexam[$val[ 'exam_id' ]] = 1;
+		}
+	 }
+
 	//  foreach($lists as $key=>$val){
 	//      if(!$errtext[ $val[ 'exam_id' ] ]){
     // 	     $ex2 = [];
@@ -134,6 +149,8 @@ if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
 	//  }
 
 
+
+
 	 $update = [];
 	 $errdata = [];
 	 foreach($lists as $key=>$val){
@@ -145,87 +162,101 @@ if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
 	 }
 
 
-	 if($errmsg){
-	     $file = date("Ymdhis")."_".$_FILES[ 'upfile' ][ 'name' ];
-	     $fp = fopen("./errexcel/".$file, "w");
-	     $txt1 = mb_convert_encoding("番号", 'SJIS','UTF-8');
-	     $txt2 = mb_convert_encoding("ID", 'SJIS','UTF-8');
-	     $txt3 = mb_convert_encoding("氏名", 'SJIS','UTF-8');
-	     $txt4 = mb_convert_encoding("ふりがな", 'SJIS','UTF-8');
-	     $txt5 = mb_convert_encoding("生年月日", 'SJIS','UTF-8');
-	     $txt6 = mb_convert_encoding("メモ1", 'SJIS','UTF-8');
-	     $txt7 = mb_convert_encoding("メモ2", 'SJIS','UTF-8');
-	     $txt8 = mb_convert_encoding("エラー", 'SJIS','UTF-8');
-	     $errcount = count($errdata);
-	     $write = [];
-	     $write[] =[$txt1, $txt2, $txt3,$txt4,$txt5,$txt6,$txt7,$txt8];
-	     foreach($errdata as $key=>$val){
-	         $write[] =[
-	               $val[ 'number' ]
-	             , $val[ 'exam_id' ]
-	             , $val[ 'name' ]
-	             , $val[ 'kana' ]
-	             , $val[ 'birth' ]
-	             , $val[ 'memo1' ]
-	             , $val[ 'memo2' ]
-	             , mb_convert_encoding($errtext[$val[ 'exam_id' ]], 'SJIS','UTF-8')
-	         ];
-	     }
-	     foreach ($write as $line) {
-	         fputcsv($fp, $line);
-	     }
-	     fclose($fp);
 
-	     $ins =[];
-	     $ins[ 'total' ] = $total;
-	     $ins[ 'mainid' ] = $id;
-	     $ins[ 'testid' ] = $sec;
-	     $ins[ 'errcount' ] = $errcount;
-	     $ins[ 'filename' ] = $file;
-	     $ins[ 'errtext' ] = $errtext;
-	     $db->setUserData('errupload',$ins);
+	if($errmsg){
+		$file = date("Ymdhis")."_".$_FILES[ 'upfile' ][ 'name' ];
+		$fp = fopen("./errexcel/".$file, "w");
+		$txt1 = mb_convert_encoding("番号", 'SJIS','UTF-8');
+		$txt2 = mb_convert_encoding("ID", 'SJIS','UTF-8');
+		$txt3 = mb_convert_encoding("氏名", 'SJIS','UTF-8');
+		$txt4 = mb_convert_encoding("ふりがな", 'SJIS','UTF-8');
+		$txt5 = mb_convert_encoding("生年月日", 'SJIS','UTF-8');
+		$txt6 = mb_convert_encoding("メモ1", 'SJIS','UTF-8');
+		$txt7 = mb_convert_encoding("メモ2", 'SJIS','UTF-8');
+		$txt8 = mb_convert_encoding("エラー", 'SJIS','UTF-8');
+		$errcount = count($errdata);
+		$write = [];
+		$write[] =[$txt1, $txt2, $txt3,$txt4,$txt5,$txt6,$txt7,$txt8];
+		foreach($errdata as $key=>$val){
+			$write[] =[
+				$val[ 'number' ]
+				, $val[ 'exam_id' ]
+				, $val[ 'name' ]
+				, $val[ 'kana' ]
+				, $val[ 'birth' ]
+				, $val[ 'memo1' ]
+				, $val[ 'memo2' ]
+				, mb_convert_encoding($errtext[$val[ 'exam_id' ]], 'SJIS','UTF-8')
+			];
+		}
+		foreach ($write as $line) {
+			fputcsv($fp, $line);
+		}
+		fclose($fp);
 
+		$ins =[];
+		$ins[ 'total' ] = $total;
+		$ins[ 'mainid' ] = $id;
+		$ins[ 'testid' ] = $sec;
+		$ins[ 'errcount' ] = $errcount;
+		$ins[ 'filename' ] = $file;
+		$ins[ 'errtext' ] = $errtext;
+		$db->setUserData('errupload',$ins);
+	}else{
+		$where=[];
+		$where[ 'customer_id' ] = $id;
+		$where[ 'partner_id'  ] = $ptid;
+		$where[ 'testgrp_id'  ] = $sec;
+		// $where[ 'exam_state'  ] = 0;
 
-	 }
-
-
-
-	$where=[];
-	$where[ 'customer_id' ] = $id;
-	$where[ 'partner_id'  ] = $ptid;
-	$where[ 'testgrp_id'  ] = $sec;
-	//$where[ 'exam_state'  ] = 0;
-
-	$cnt = 0;
-
-	foreach($update as $key=>$val){
-	    if($val[ 'number' ]){
-	        if($val[ 'birth' ]){
-	            $date = explode("/",$val[ 'birth' ]);
-	        }else{
-	            $date = "";
-	        }
-	        $where[ 'number'      ] = $val[ 'number' ];
-	        $edit = [];
-	        $edit[ 'exam_id' ] = $val[ 'exam_id' ];
-	        $edit[ 'name'    ] = mb_convert_encoding($val[ 'name'    ],'UTF-8','sjis-win');
-	        $edit[ 'kana'    ] = mb_convert_encoding($val[ 'kana'    ],'UTF-8','sjis-win');
-	        if($date){
-	            $edit[ 'birth'   ] = sprintf("%04d/%02d/%02d",$date[0],$date[1],$date[2]);
-	        }else{
-	            $edit[ 'birth'   ] = "";
-	        }
-	        $edit[ 'memo1'   ] = mb_convert_encoding($val[ 'memo1'   ],'UTF-8','sjis-win');
-	        $edit[ 'memo2'   ] = mb_convert_encoding($val[ 'memo2'   ],'UTF-8','sjis-win');
-	        $edit[ 'tensaku_name'   ] = mb_convert_encoding($val[ 'tensaku_name'   ],'UTF-8','sjis-win');
-	        $edit[ 'tensaku_mail'   ] = mb_convert_encoding($val[ 'tensaku_mail'   ],'UTF-8','sjis-win');
-	        $flg = $obj->editTest($where,$edit);
-	        if($flg){
-	            $cnt++;
-	        }
-	    }
+		// 対象データ
+		$targetData = $obj->getTestData($where);
+		// var_dump($targetData);
+		// exit();
+		$cnt = 0;
+		// numberのカンマ区切り
+		$num = [];
+		// exam_idのsql
+		$examid = " ";
+		// nameのSQL
+		$nameData = " ";
+		$kanaData = " ";
+		// birthのSQL
+		$birthData = " ";
+		// memo1のSQL
+		$memo1Data = " ";
+		$memo2Data = " ";
+		foreach($update as $key=>$value){
+			if($targetData[$value['number']]){
+				$num[] = $value['number'];
+				$examid .= " WHEN '".$value[ 'number' ]."' THEN '".$value[ 'exam_id' ]."' ";
+				$nameData .= " WHEN '".$value[ 'number' ]."' THEN '".mb_convert_encoding($value[ 'name' ],"UTF-8","SJIS")."' ";
+				$kanaData .= " WHEN '".$value[ 'number' ]."' THEN '".mb_convert_encoding($value[ 'kana' ],"UTF-8","SJIS")."' ";
+				$birthData .= " WHEN '".$value[ 'number' ]."' THEN '".$value[ 'birth' ]."' ";
+				$memo1Data .= " WHEN '".$value[ 'number' ]."' THEN '".mb_convert_encoding($value[ 'memo1' ],"UTF-8","SJIS")."' ";
+				$memo2Data .= " WHEN '".$value[ 'number' ]."' THEN '".mb_convert_encoding($value[ 'memo2' ],"UTF-8","SJIS")."' ";
+			}
+		}
+		$numline = implode(",",$num);
+		$sql = "";
+		$sql = "update `t_testpaper` SET 
+			`exam_id`= CASE `number` ".$examid." END ,
+			`name`= CASE `number` ".$nameData." END ,
+			`kana`= CASE `number` ".$kanaData." END ,
+			`birth`= CASE `number` ".$birthData." END , 
+			`memo1`= CASE `number` ".$memo1Data." END , 
+			`memo2`= CASE `number` ".$memo2Data." END 
+			WHERE 
+				`number` IN (".$numline.") AND
+				`testgrp_id` = ".$where[ 'testgrp_id' ]."
+		";
+		if($_REQUEST[ 'type' ] === 1){
+			$sql .= " AND exam_state = 0 ";
+		}
+		//echo mb_convert_encoding($sql,"utf-8","sjis");
+		//var_dump($update);
+		$rlt = $obj->doSql($sql);
 	}
-
 }
 $where = [];
 $where[ 'testid' ] = $sec;
