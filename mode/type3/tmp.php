@@ -33,18 +33,18 @@ if ($_REQUEST[ 'lists' ]) {
     $where[ 'filename'   ] = $_REQUEST[ 'text'  ];
     $where[ 'status'     ] = $_REQUEST[ 'stsText' ];
     $where[ 'basetype'     ] = $basetype;
-    $file = $obj->getFileData($where);
 
+    $file = $obj->getFileData($where);
     $html = "";
     if (count($file)) {
         foreach ($file as $key=>$val) {
             $html .= "<tr>\n";
             $html .= "<td><div class='indent'><input type='checkbox' name='del[".$val[ 'id' ]."]' value=".$val[ 'id' ]." id='chk_".$val[ 'id' ]."' class='chk'></div>";
-            $html .= "<img src='/images/check_off.gif' class='chkImg'  id='chkImg_".$val[ id ]."' >";
+            $html .= "<img src='/images/check_off.gif' class='chkImg'  id='chkImg_".$val[ 'id' ]."' >";
             $html .= "</td>\n";
             $html .= "<td>".$val[ 'regist_ts' ]."</td>\n";
             $enc = urlencode($val[ 'filename' ]);
-            $html .= "<td><a href='/index/tmp/".$sec."/".$val[id]."/".$enc."' >".$val[ 'filename' ]."</a></td>\n";
+            $html .= "<td><a href='/index/tmp/".$sec."/".$val['id']."/".$enc."' >".$val[ 'filename' ]."</a></td>\n";
             $html .= "<td>".$val[ 'size' ]."</td>\n";
             $html .= "<td>".$a_status[$val[ 'status' ]]."</td>\n";
             $html .= "<td><div class=mg><input type='button' id='del_".$val[ 'id' ]."' class='del button2' value='削除' ></div></td>\n";

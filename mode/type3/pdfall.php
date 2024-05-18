@@ -12,5 +12,4 @@ $where[ 'customer_id' ] = $id;
 $where[ 'test_id' ] = $sec;
 $where[ 'limit' ] = 10;
 $pdfall = $obj->getFilePDFPartner($where);
-
 ?>

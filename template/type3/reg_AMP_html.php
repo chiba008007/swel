@@ -35,7 +35,8 @@
 
 
 </div>
-
+<?php endif;?>
+<?php if($basetype == 2 && $first == "reg" ):?>
 <div >
 	<table>
 		<tr>

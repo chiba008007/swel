@@ -216,7 +216,7 @@ if ($_REQUEST['regist']) {
 	//請求書用hidden項目作成
 	$hidden = "";
 	if ($_REQUEST['editMan'] == "adds" && $_REQUEST['RegNumber'] > 0) {
-		if (@count($_REQUEST['pdf'])) {
+		if (isset($_REQUEST['pdf']) && count($_REQUEST['pdf'])) {
 			foreach ($_REQUEST['pdf'] as $key => $val) {
 				$hidden .= "<input type='hidden' name='pdf[" . $key . "]' value='" . $key . "' >";
 			}

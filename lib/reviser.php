@@ -842,7 +842,8 @@ class Excel_Reviser
 			return $this->raiseError("ERROR Cannot read file ${Fname} \nProbably there is not reading permission whether there is not a file");
 		}
 	// 2007.11.19
-		$this->Flag_Magic_Quotes = get_magic_quotes_runtime();
+	//	$this->Flag_Magic_Quotes = get_magic_quotes_runtime();
+		$this->Flag_Magic_Quotes = false;
 		if ($this->Flag_Magic_Quotes) set_magic_quotes_runtime(0);
 		$ole_data = @file_get_contents($Fname);
 		if ($this->Flag_Magic_Quotes) set_magic_quotes_runtime($this->Flag_Magic_Quotes);
@@ -2193,7 +2194,7 @@ $tmp.=$this->_makeImageOBJ($sn);
 	function asc2utf($ascii){
 		$utfname='';
 		for ($i = 0; $i < strlen($ascii); $i++) {
-			$utfname.=$ascii{$i}."\x00";
+			$utfname.=$ascii[$i]."\x00";
 		}
 		return $utfname;
 	}

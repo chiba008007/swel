@@ -25,8 +25,6 @@ if($five == "anq"){
 	echo ",‰ñ“š11";
 	echo ",‰ñ“š12";
 	echo ",‰ñ“š13";
-	echo ",‰ñ“š14";
-	echo ",‰ñ“š15";
 
 	echo "\n";
 	if(count($tlist[ 'ans' ])){
@@ -36,10 +34,9 @@ if($five == "anq"){
 			echo mb_convert_encoding($val[ 'sei' ].$val[ 'mei' ],"SJIS-WIN","UTF-8").",";
 			echo mb_convert_encoding($val[ 'sei_kana' ].$val[ 'mei_kana' ],"SJIS-WIN","UTF-8").",";
 			echo mb_convert_encoding($val[ 'mail' ],"SJIS-WIN","UTF-8").",";
-			for($i=1;$i<=15;$i++){
+			for($i=1;$i<=13;$i++){
 				$anq = "anq".$i;
-				echo $val[$anq].",";
-				//echo mb_convert_encoding($val[$anq],"SJIS-WIN","UTF-8").",";
+				echo mb_convert_encoding($val[$anq],"SJIS-WIN","UTF-8").",";
 			}
 			
 

@@ -1,29 +1,29 @@
 <?PHP
-		echo "ŒŸ¸–¼,".mb_convert_encoding($tlist[ 'testname' ],"SJIS","UTF-8")."\n";
-		echo "ƒp[ƒgƒi[Šé‹Æ,".mb_convert_encoding($tlist[ 'ptname' ],"SJIS","UTF-8")."\n";
-		echo "ŒÚ‹qŠé‹Æ,".mb_convert_encoding($tlist[ 'cname' ],"SJIS","UTF-8")."\n";
-		echo "”Ô†,";
-		echo "ŽóŒŸŽÒID,";
-		echo "ŽóŒŸŽÒ–¼,";
-		echo "ŽóŒŸŽÒ–¼‚©‚È,";
-		echo "¶”NŒŽ“ú,";
-		echo "”N—î,";
-		echo "«•Ê,";
-		echo "‡”Û,";
-		echo "ƒƒ‚‚P,";
-		echo "ƒƒ‚‚Q,";
-		echo "ŽóŒŸ“ú,";
-		echo "ŽóŒŸŠJŽnŽžŠÔ,";
-		echo "ŽóŒŸŽžŠÔ,";
+		echo "æ¤œæŸ»å,".$tlist[ 'testname' ]."\n";
+		echo "ãƒ‘ãƒ¼ãƒˆãƒŠãƒ¼ä¼æ¥­,".$tlist[ 'ptname' ]."\n";
+		echo "é¡§å®¢ä¼æ¥­,".$tlist[ 'cname' ]."\n";
+		echo "ç•ªå·,";
+		echo "å—æ¤œè€…ID,";
+		echo "å—æ¤œè€…å,";
+		echo "å—æ¤œè€…åã‹ãª,";
+		echo "ç”Ÿå¹´æœˆæ—¥,";
+		echo "å¹´é½¢,";
+		echo "æ€§åˆ¥,";
+		echo "åˆå¦,";
+		echo "ãƒ¡ãƒ¢ï¼‘,";
+		echo "ãƒ¡ãƒ¢ï¼’,";
+		echo "å—æ¤œæ—¥,";
+		echo "å—æ¤œé–‹å§‹æ™‚é–“,";
+		echo "å—æ¤œæ™‚é–“,";
 
 
 		$max1 = 55;
 		for($i=1;$i<=$max1;$i++){
-			echo "–â".$i.",";
+			echo "å•".$i.",";
 		}
-		$max2 = 90;
+		$max2 = 89;
 		for($i=1;$i<=$max2;$i++){
-			echo "‰ñ“š".$i.",";
+			echo "å›žç­”".$i.",";
 		}
 
 
@@ -33,27 +33,27 @@
 			if(is_numeric($val[ 'number' ])){
 				echo $val[ 'number' ].",";
 				echo $val[ 'exam_id' ].",";
-				echo mb_convert_encoding($val[ 'name' ],'sjis-win','UTF-8').",";
-				echo mb_convert_encoding($val[ 'kana' ],'sjis-win','UTF-8').",";
-				echo mb_convert_encoding($val[ 'birth' ],'sjis','UTF-8').",";
-				echo mb_convert_encoding($val[ 'age' ],'sjis','UTF-8').",";
-				echo mb_convert_encoding($a_gender[$val[ 'sex' ]],'sjis','UTF-8').",";
-				echo mb_convert_encoding($val[ 'pass' ],'sjis','UTF-8').",";
+				echo $val[ 'name' ].",";
+				echo $val[ 'kana' ].",";
+				echo $val[ 'birth' ].",";
+				echo $val[ 'age' ].",";
+				echo $a_gender[$val[ 'sex' ]].",";
+				echo $val[ 'pass' ].",";
 				$memo1 = preg_replace("/\n|\r/","",$val[ 'memo1' ]);
-				echo mb_convert_encoding($memo1,'sjis','UTF-8').",";
+				echo $memo1.",";
 				$memo2 = preg_replace("/\n|\r/","",$val[ 'memo2' ]);
-				echo mb_convert_encoding($memo2,'sjis','UTF-8').",";
+				echo $memo2.",";
 				if($val[ 'exam_state' ] == 2){
-					echo mb_convert_encoding($val[ 'exam_date'  ],'sjis','UTF-8')." ,";
+					echo $val[ 'exam_date'  ]." ,";
 				}elseif($val[ 'exam_state' ] == 1){
-					echo "ŽóŒŸ’†,";
+					echo "å—æ¤œä¸­,";
 				}else{
-					echo "–¢ŽóŒŸ,";
+					echo "æœªå—æ¤œ,";
 				}
 				
-				echo mb_convert_encoding($val[ 'start_time' ],'sjis','UTF-8')." ,";
+				echo $val[ 'start_time' ]." ,";
 				
-				echo mb_convert_encoding($val[ 'exam_time'  ],'sjis','UTF-8')." ,";
+				echo $val[ 'exam_time'  ]." ,";
 				
 				for($i=1;$i<=$max1;$i++){
 					$ans = "ans".$i;

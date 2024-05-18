@@ -8,13 +8,12 @@
 //
 //-------------------------------------------
 ini_set( 'display_errors', 1 ); 
-ini_set('max_execution_time', 0);
+
 require_once("./lib/include_cusCsvUp.php");
 
 $obj = new cusCsvUpMethod();
 
 if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
-
 	$tmp = fopen($_FILES['upfile']['tmp_name'], "r");
 	setlocale(LC_ALL, 'ja_JP.UTF-8');
 	setlocale(LC_ALL, 'ja_JP.EUC-JP');
@@ -65,22 +64,22 @@ if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
 
     ////////////////////////////////////////////////////////
 	 ////ファイル内に重複するIDがある場合：（両方ともエラー、エラーの種類：“ファイル内重複エラー” ）
-	//  foreach($lists as $key=>$val){
-	//      if(!$errtext[ $val[ 'exam_id' ] ]){
-    // 	     $ex2 = [];
-    // 	     $ex2[ 'pid' ] = $id;
-    // 	     $ex2[ 'tid' ] = $sec;
-    // 	     $ex2[ 'exam' ] = $val[ 'exam_id' ];
-    // 	     $ex2[ 'number' ] = $val[ 'number' ];
-    // 	     $exam2 = $obj->checktestdata($ex2);
-    // 	     if($exam2){
-    // 	         $errmsg = "ファイルのIDが検査内のIDと一致しないか確認してください。";
-    // 	         $errtext[$val[ 'exam_id' ]] = "IDは既に登録されています";
-    // 	         $errexam[$val[ 'exam_id' ]] = 1;
-	// 		}
-	// 	}
-	//  }
-
+	 foreach($lists as $key=>$val){
+	     if(!$errtext[ $val[ 'exam_id' ] ]){
+    	     $ex2 = [];
+    	     $ex2[ 'pid' ] = $id;
+    	     $ex2[ 'tid' ] = $sec;
+    	     $ex2[ 'exam' ] = $val[ 'exam_id' ];
+    	     $ex2[ 'number' ] = $val[ 'number' ];
+    	     $exam2 = $obj->checktestdata($ex2);
+    	     if($exam2){
+    	         $errmsg = "ファイルのIDが検査内のIDと一致しないか確認してください。";
+    	         $errtext[$val[ 'exam_id' ]] = "IDは既に登録されています";
+    	         $errexam[$val[ 'exam_id' ]] = 1;
+			}
+		}
+	 }
+	
 	///////////////////////////////////////////////////////////
 	//山本対応 ID文字数チェック
 	foreach($lists as $key=>$val) {
@@ -113,25 +112,27 @@ if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
 	}
 
 
+
+
 	 /////////////////////////////
 	 ///該当IDが受検済み・受検中の場合：（エラーの種類：“IDは受検済みか受検中エラー” ）
-	//  if($_REQUEST[ 'type' ] == 1){
+	 if($_REQUEST[ 'type' ] == 1){
 
-	//      foreach($lists as $key=>$val){
-	//          if(!$errtext[ $val[ 'exam_id' ] ]){
-    // 	         $ex3 = [];
-    // 	         $ex3[ 'pid' ] = $id;
-    // 	         $ex3[ 'tid' ] = $sec;
-    // 	         $ex3[ 'number' ] = $val[ 'number' ];
-    // 	         $exam3 = $obj->checktestexam($ex3);
-    // 	         if($exam3){
-    // 	             $errmsg = "IDは受検済みか受検中エラー";
-    // 	             $errtext[$val[ 'exam_id' ]] = "IDは受検済みか受検中エラー";
-    // 	             $errexam[$val[ 'exam_id' ]] = 1;
-    // 	         }
-	//          }
-	//      }
-	//  }
+	     foreach($lists as $key=>$val){
+	         if(!$errtext[ $val[ 'exam_id' ] ]){
+    	         $ex3 = [];
+    	         $ex3[ 'pid' ] = $id;
+    	         $ex3[ 'tid' ] = $sec;
+    	         $ex3[ 'number' ] = $val[ 'number' ];
+    	         $exam3 = $obj->checktestexam($ex3);
+    	         if($exam3){
+    	             $errmsg = "IDは受検済みか受検中エラー";
+    	             $errtext[$val[ 'exam_id' ]] = "IDは受検済みか受検中エラー";
+    	             $errexam[$val[ 'exam_id' ]] = 1;
+    	         }
+	         }
+	     }
+	 }
 
 
 	 $update = [];
@@ -143,6 +144,10 @@ if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
 	         $update[$key] = $val;
 	     }
 	 }
+
+
+
+
 
 
 	 if($errmsg){
@@ -197,7 +202,6 @@ if($_REQUEST[ 'upload' ] && $_FILES['upfile']['tmp_name']){
 	//$where[ 'exam_state'  ] = 0;
 
 	$cnt = 0;
-
 	foreach($update as $key=>$val){
 	    if($val[ 'number' ]){
 	        if($val[ 'birth' ]){

@@ -594,7 +594,7 @@ if($basetype == 1): ?>
 			<?php foreach($youtubeflag as $key=>$value):
 					$chk = "";
 					$youtube = "";
-					if(isset($_REQUEST[ 'youtubeflag' ]) && substr($_REQUEST[ 'youtubeflag' ]) > 0 ){
+					if(isset($_REQUEST[ 'youtubeflag' ]) && strlen($_REQUEST[ 'youtubeflag' ]) > 0 ){
 						if($_REQUEST[ 'youtubeflag' ] == $key){
 							$chk ="checked";
 							$youtube = $_REQUEST[ 'youtube' ];
